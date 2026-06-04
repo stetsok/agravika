@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agravika | Інноваційні кормові добавки</title>
+    <style>
+        :root {
+            --brand-dark: #112211;     /* Глибокий преміальний хвойний */
+            --brand-accent: #a3e635;   /* Технологічний лайм-акцент */
+            --text-main: #1e293b;      /* Графітовий основний */
+            --text-muted: #64748b;     /* М'який сірий для описів */
+            --bg-light: #fcfdfd;       /* Чистий фон */
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background-color: var(--brand-dark);
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: left;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-accent);
+            margin-bottom: 25px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.35rem;
+            color: #cbd5e1;
+            max-width: 650px;
+            font-weight: 300;
+        }
+
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-headline {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            padding: 35px 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            opacity: 0.08;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .standards-section {
+            background: #f1f5f9;
+            border-radius: 24px;
+            padding: 50px 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .standards-left {
+            flex: 1;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            line-height: 1.3;
+        }
+
+        .standards-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .standard-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 5px;
+        }
+
+        .standard-item p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .status-container {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 20px;
+            padding: 45px 30px;
+            text-align: center;
+        }
+
+        .status-container h3 {
+            font-size: 1.6rem;
+            color: #166534;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .status-container p {
+            color: #14532d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            font-weight: 300;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: var(--brand-dark);
+            color: #ffffff;
+            padding: 14px 35px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-brand {
+            font-weight: 600;
+            color: var(--brand-dark);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .standards-section { flex-direction: column; padding: 30px 20px; }
+            footer { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="badge">Скоро запуск / Coming Soon</div>
+            <h1>AGRAVIKA</h1>
+            <p>Інноваційні рішення у сфері біоактивних та кормових добавок для професійного тваринництва та аквакультури.</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section-headline">Екосистема рішень Agravika</div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="card-number">01</div>
+                <h3>Максимальний біо-вектор</h3>
+                <p>Добавки цілеспрямованої дії для оптимізації метаболізму, покращення конверсії корму та стабільного, здорового приросту маси.</p>
+            </div>
+            <div class="product-card">
+                <div class="card-number">02</div>
+                <h3>Природний біозахист</h3>
+                <p>Комплекси на основі високоякісних органічних кислот та фітобіотиків для надійної стабілізації мікрофлори та міцного імунітету.</p>
+            </div>
+            <div class="product-card">
+                <div class="card-number">03</div>
+                <h3>Мікронутриентний баланс</h3>
+                <p>Високоточні індивідуальні бленди вітамінів, амінокислот та мінералів з абсолютною біодоступністю для кожного виду тварин.</p>
+            </div>
+        </div>
+
+        <div class="section-headline">Стандарти ефективності</div>
+        <div class="standards-section">
+            <div class="standards-left">
+                Безкомпромісна якість компонентів, що трансформується у прямий прибуток вашого господарства.
+            </div>
+            <div class="standards-right">
+                <div class="standard-item">
+                    <h4>🔬 Наукова експертиза</h4>
+                    <p>Рецептури та формули, що базуються на фізіологічних дослідженнях та передових світових практиках харчування.</p>
+                </div>
+                <div class="standard-item">
+                    <h4>🌱 Чистота та безпека сировини</h4>
+                    <p>Повний контроль та сертифікація інгредієнтів без використання шкідливих баластів чи агресивних стимуляторів.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-container">
+            <h3>Платформа інтеграції рішень готується до запуску</h3>
+            <p>Наразі ми формуємо фінальну онлайн-платформу з каталогом продукції, технічними картами та калькулятором дозування.</p>
+            <a href="mailto:info@agravika.com.ua" class="action-button">Зв'язатися: info@agravika.com.ua</a>
+        </div>
+
+        <footer>
+            <div><span class="footer-brand">© 2026 ТОВ «АГРАВІКА».</span> Всі права захищено.</div>
+            <div>Офіційний домен сайту: <strong style="color: var(--brand-dark);">agravika.com.ua</strong></div>
+        </footer>
+    </div>
+
+</body>
+</html>
