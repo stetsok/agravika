@@ -1,84 +1,560 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>АГРАВІКА | Інноваційні кормові рішення</title>
-<meta name="description" content="Кормові добавки, органічні кислоти, фітобіотики та функціональні інгредієнти для сучасного тваринництва.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agravika | Next-Gen Кормові Технології та Біозахист</title>
+    <meta name="description" content="Високотехнологічні кормові добавки, органічні кислоти та фітобіотики для промислового тваринництва та аквакультури.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Agravika Premium Design System v2.0 */
+        :root {
+            --bg-base: #f9fbf9;        /* Свіжий матовий фон з легким відтінком хвої */
+            --panel-white: #ffffff;    /* Чистий білий для карток */
+            --panel-border: rgba(17, 34, 17, 0.06);
+            --text-title: #0f1811;     /* Глибокий, майже чорний хвойний */
+            --text-body: #475569;      /* Збалансований графітовий для читабельності */
+            --brand-primary: #112211;  /* Шляхетний темно-зелений */
+            --brand-accent: #16a34a;   /* Активний біо-зелений */
+            --brand-light: #f0fdf4;    /* Світло-зелений пастельний */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 80% 15%, rgba(22, 165, 74, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 10% 75%, rgba(17, 34, 17, 0.02) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Навігація */
+        header {
+            background: rgba(249, 251, 249, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid var(--panel-border);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--text-title);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo span {
+            color: var(--brand-accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-title);
+        }
+
+        .nav-cta {
+            background: var(--brand-primary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(17, 34, 17, 0.1);
+        }
+
+        .nav-cta:hover {
+            background: var(--brand-accent);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Екран */
+        .hero {
+            padding: 100px 0 60px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--panel-white);
+            border: 1px solid var(--panel-border);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .status-tag .pulse {
+            width: 6px;
+            height: 6px;
+            background: var(--brand-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--brand-accent);
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-title);
+            letter-spacing: -1.5px;
+            max-width: 900px;
+            margin: 0 auto 24px;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, var(--text-title), var(--brand-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 35px;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-body);
+            font-weight: 400;
+        }
+
+        /* Bento Grid Архітектура */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .bento-card {
+            background: var(--panel-white);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(22, 165, 74, 0.25);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.03);
+        }
+
+        /* Bento Модифікатори */
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .card-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-accent);
+            background: var(--brand-light);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .card-icon-modern {
+            font-size: 1.5rem;
+            color: var(--brand-primary);
+            opacity: 0.8;
+        }
+
+        .bento-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-title);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .bento-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            font-weight: 400;
+        }
+
+        /* Спеціальний блок "Про компанію" у стилі Bento Split */
+        .about-split {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-split h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-title);
+            letter-spacing: -1px;
+            flex: 1;
+            line-height: 1.2;
+        }
+
+        .about-split p {
+            flex: 1.5;
+            font-size: 1.1rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        /* Блок Переваг */
+        .why-headline {
+            text-align: center;
+            margin: 80px 0 30px;
+        }
+
+        .why-headline h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-title);
+            letter-spacing: -0.5px;
+        }
+
+        .stats-bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: var(--panel-white);
+            border: 1px solid var(--panel-border);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            border-color: var(--text-title);
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--text-title);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .stat-box span {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        /* Контактна зона (CTA) */
+        .cta-bento-box {
+            background: radial-gradient(circle at 90% 10%, var(--brand-light), transparent), var(--panel-white);
+            border: 1px solid rgba(22, 165, 74, 0.2);
+            padding: 60px 40px;
+            border-radius: 28px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-bento-box h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-title);
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .cta-bento-box p {
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 30px;
+        }
+
+        .action-mail-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--brand-primary);
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 8px 24px rgba(17, 34, 17, 0.15);
+            transition: all 0.2s;
+        }
+
+        .action-mail-btn:hover {
+            background: #193319;
+            transform: scale(1.01);
+            box-shadow: 0 12px 28px rgba(17, 34, 17, 0.25);
+        }
+
+        /* Новий мінімалістичний підвал */
+        footer {
+            margin: 80px 0 40px;
+            padding-top: 25px;
+            border-top: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .span-2 { grid-column: span 1; }
+            .stats-bento { grid-template-columns: repeat(2, 1fr); }
+            .about-split { flex-direction: column; text-align: center; gap: 15px; }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .span-3 { grid-column: span 1; }
+            .stats-bento { grid-template-columns: 1fr; }
+            nav { display: none; } /* Чистий мобільний фокус */
+            footer { flex-direction: column; gap: 15px; text-align: center; }
+            .hero { padding: 60px 0 40px 0; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-<div class="container nav">
-<div class="logo">AGRAVIKA</div>
-<nav>
-<a href="#about">Про нас</a>
-<a href="#solutions">Рішення</a>
-<a href="#why">Переваги</a>
-<a href="#contact">Контакти</a>
-</nav>
-</div>
-</header>
+    <!-- Навігаційна панель -->
+    <header>
+        <div class="container nav">
+            <div class="logo">AGRAVIKA<span>.</span></div>
+            <nav>
+                <a href="#about">Про компанію</a>
+                <a href="#solutions">Рішення</a>
+                <a href="#why">Переваги</a>
+            </nav>
+            <a class="nav-cta" href="#contact">Консультація</a>
+        </div>
+    </header>
 
-<section class="hero">
-<div class="container">
-<span class="tag">Інноваційні кормові технології</span>
-<h1>Ефективні рішення для сучасного тваринництва</h1>
-<p>Постачаємо кормові добавки, органічні кислоти, фітобіотики та функціональні інгредієнти для підвищення продуктивності та рентабельності господарств.</p>
-<a class="btn" href="#contact">Отримати консультацію</a>
-</div>
-</section>
+    <div class="container">
+        
+        <!-- Головна секція (Hero) -->
+        <section class="hero">
+            <div class="status-tag">
+                <div class="pulse"></div> Інноваційні кормові технології
+            </div>
+            <h1>Ефективні рішення для <span>сучасного тваринництва.</span>[cite: 3]</h1>
+            <p>Постачаємо кормові добавки, органічні кислоти, фітобіотики та функціональні інгредієнти для підвищення продуктивності та рентабельності господарств.[cite: 3]</p>
+            <a class="action-mail-btn" href="#contact">Отримати рішення з оптимізації раціону →</a>
+        </section>
 
-<section id="about" class="section">
-<div class="container">
-<h2>Про компанію</h2>
-<p class="lead">АГРАВІКА — партнер для виробників комбікормів та тваринницьких підприємств, які прагнуть впроваджувати сучасні кормові технології та досягати стабільних результатів.</p>
-</div>
-</section>
+        <!-- Модуль: Про компанію (Bento Split) -->
+        <section id="about" class="bento-card span-3" style="margin-bottom: 24px;">
+            <div class="about-split">
+                <h2>Надійний вектор вашої біо-ефективності.</h2>
+                <p><strong>АГРАВІКА</strong> — стратегічний партнер для виробників комбікормів та тваринницьких підприємств[cite: 3]. Ми допомагаємо впроваджувати прогресивні технології годівлі та досягати стабільних фінансових результатів завдяки науково обґрунтованому підходу[cite: 3].</p>
+            </div>
+        </section>
 
-<section id="solutions" class="section alt">
-<div class="container">
-<h2>Наші рішення</h2>
-<div class="grid">
-<div class="card"><h3>Органічні кислоти</h3><p>Підтримка травлення та здорової мікрофлори.</p></div>
-<div class="card"><h3>Фітобіотики</h3><p>Натуральні рішення для продуктивності тварин.</p></div>
-<div class="card"><h3>Кормові добавки</h3><p>Покращення конверсії корму та виробничих показників.</p></div>
-<div class="card"><h3>Функціональні інгредієнти</h3><p>Інноваційні компоненти для сучасних рецептів кормів.</p></div>
-<div class="card"><h3>Премікси</h3><p>Індивідуальні рішення для різних видів тварин.</p></div>
-<div class="card"><h3>Технічна підтримка</h3><p>Консультації та супровід впровадження продуктів.</p></div>
-</div>
-</div>
-</section>
+        <!-- Екосистема рішень (Bento Grid) -->
+        <section id="solutions">
+            <div class="bento-grid">
+                
+                <!-- Картка 1 -->
+                <div class="bento-card">
+                    <div class="card-meta">
+                        <span class="card-badge">Травлення</span>
+                        <span class="card-icon-modern">🧪</span>
+                    </div>
+                    <div>
+                        <h3>Органічні кислоти[cite: 3]</h3>
+                        <p>Підтримка оптимального pH шлунково-кишкового тракту, санація готових кормів та стабілізація здорової мікрофлори[cite: 3].</p>
+                    </div>
+                </div>
 
-<section id="why" class="section">
-<div class="container">
-<h2>Чому обирають Agravika</h2>
-<div class="stats">
-<div><strong>Якість</strong><span>Перевірені виробники</span></div>
-<div><strong>Досвід</strong><span>Практичний підхід</span></div>
-<div><strong>Підтримка</strong><span>Технологічний супровід</span></div>
-<div><strong>Результат</strong><span>Орієнтація на ефективність</span></div>
-</div>
-</div>
-</section>
+                <!-- Картка 2 -->
+                <div class="bento-card">
+                    <div class="card-meta">
+                        <span class="card-badge">Біозахист</span>
+                        <span class="card-icon-modern">🌱</span>
+                    </div>
+                    <div>
+                        <h3>Фітобіотики[cite: 3]</h3>
+                        <p>Натуральні високоактивні рослинні екстракти для зміцнення імунітету та природного стимулювання росту[cite: 3].</p>
+                    </div>
+                </div>
 
-<section id="contact" class="cta">
-<div class="container">
-<h2>Готові до співпраці?</h2>
-<p>Зв'яжіться з нами для підбору оптимального рішення для вашого бізнесу.</p>
-<a class="btn white" href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
-</div>
-</section>
+                <!-- Картка 3 -->
+                <div class="bento-card">
+                    <div class="card-meta">
+                        <span class="card-badge">Конверсія</span>
+                        <span class="card-icon-modern">⚡</span>
+                    </div>
+                    <div>
+                        <h3>Кормові добавки[cite: 3]</h3>
+                        <p>Високотехнологічні компоненти для покращення засвоєння поживних речовин та виробничих показників[cite: 3].</p>
+                    </div>
+                </div>
 
-<footer>
-<div class="container">
-© 2026 AGRAVIKA. Всі права захищено.
-</div>
-</footer>
+                <!-- Картка 4 (Широка картка) -->
+                <div class="bento-card span-2">
+                    <div class="card-meta">
+                        <span class="card-badge">Рецептура</span>
+                        <span class="card-icon-modern">🔬</span>
+                    </div>
+                    <div>
+                        <h3>Функціональні інгредієнти[cite: 3]</h3>
+                        <p>Інноваційні структурні компоненти для розробки та збалансування прогресивних сучасних рецептів комбікормів[cite: 3].</p>
+                    </div>
+                </div>
+
+                <!-- Картка 5 -->
+                <div class="bento-card">
+                    <div class="card-meta">
+                        <span class="card-badge">Баланс</span>
+                        <span class="card-icon-modern">🧬</span>
+                    </div>
+                    <div>
+                        <h3>Премікси[cite: 3]</h3>
+                        <p>Індивідуальні високовітамінні та мінеральні бленди, створені під точні фізіологічні потреби конкретного виду тварин[cite: 3].</p>
+                    </div>
+                </div>
+
+                <!-- Картка 6 (Повна ширина) -->
+                <div class="bento-card span-3" style="background: linear-gradient(135deg, var(--panel-white), #f0fdf4);">
+                    <div class="card-meta">
+                        <span class="card-badge" style="background: var(--brand-primary); color:#fff;">Експертиза</span>
+                        <span class="card-icon-modern">🤝</span>
+                    </div>
+                    <div style="max-width: 700px;">
+                        <h3 style="font-size: 1.4rem;">Технічна підтримка та інжиніринг раціонів[cite: 3]</h3>
+                        <p style="font-size: 1rem; margin-top: 6px;">Ми не просто продаємо компоненти. Наша команда надає професійні консультації, проводить аудит поточних схем годівлі та забезпечує повний супровід інтеграції продуктів безпосередньо на вашому виробництві[cite: 3].</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Стандарти / Чому ми -->
+        <section id="why">
+            <div class="why-headline">
+                <h2>Чому обирають Agravika[cite: 3]</h2>
+            </div>
+            <div class="stats-bento">
+                <div class="stat-box">
+                    <strong>Якість[cite: 3]</strong>
+                    <span>Перевірені світові виробники[cite: 3]</span>
+                </div>
+                <div class="stat-box">
+                    <strong>Досвід[cite: 3]</strong>
+                    <span>Глибокий практичний підхід[cite: 3]</span>
+                </div>
+                <div class="stat-box">
+                    <strong>Підтримка[cite: 3]</strong>
+                    <span>Повний технологічний супровід[cite: 3]</span>
+                </div>
+                <div class="stat-box">
+                    <strong>Результат[cite: 3]</strong>
+                    <span>Чітка орієнтація на ефективність[cite: 3]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Зона контакту (CTA) -->
+        <section id="contact" class="cta-card cta-bento-box">
+            <h2>Готові оптимізувати показники?</h2>
+            <p>Зв'яжіться з нашими інженерами для точного підбору та розрахунку дозування добавок під ваші завдання[cite: 3].</p>
+            <a class="action-mail-btn" href="mailto:info@agravika.com.ua">
+                <span>✉</span> Написати нам: info@agravika.com.ua[cite: 3]
+            </a>
+        </section>
+
+        <!-- Підвал сторінки -->
+        <footer>
+            <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.[cite: 3]</div>
+            <div class="footer-right">
+                <span>Офіційний домен: <strong>agravika.com.ua</strong></span>
+            </div>
+        </footer>
+
+    </div>
 
 </body>
 </html>
