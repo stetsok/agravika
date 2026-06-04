@@ -1,343 +1,78 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agravika | Next-Gen Aquaculture & Animal Nutrition</title>
-    <style>
-        /* Modern Premium Design System */
-        :root {
-            --bg-main: #0a0f0a;        /* Ультра-темний глибокий фон */
-            --panel-bg: rgba(255, 255, 255, 0.03); /* Скляні панелі */
-            --panel-border: rgba(255, 255, 255, 0.08);
-            --accent-neon: #b5f42b;    /* Яскравий біо-технологічний лайм */
-            --accent-muted: #223c24;   /* Стриманий хвойний для акцентів */
-            --text-pure: #ffffff;      /* Чистий білий для контрасту */
-            --text-body: #94a3b8;      /* Дорогий матовий сірий (Slate) */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-            /* Легке преміальне світіння на фоні */
-            background-image: 
-                radial-gradient(circle at 80% 20%, rgba(181, 244, 43, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 10% 70%, rgba(34, 60, 36, 0.15) 0%, transparent 50%);
-            background-attachment: fixed;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Навігація / Хедер */
-        header {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--panel-border);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--text-pure);
-        }
-
-        .logo span {
-            color: var(--accent-neon);
-        }
-
-        /* Нова інтерактивна Hero-зона */
-        .hero {
-            padding: 100px 0 60px 0;
-            position: relative;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--panel-bg);
-            border: 1px solid var(--panel-border);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-pure);
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .status-badge .pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-neon);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-neon);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            color: var(--text-pure);
-            letter-spacing: -2px;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(to right, #ffffff, var(--accent-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            max-width: 700px;
-            color: var(--text-body);
-            font-weight: 300;
-        }
-
-        /* Bento Grid Макет */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .bento-card {
-            background: var(--panel-bg);
-            border: 1px solid var(--panel-border);
-            border-radius: 24px;
-            padding: 40px 32px;
-            backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(181, 244, 43, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Великі картки для Bento ефекту */
-        .span-2 {
-            grid-column: span 2;
-        }
-
-        .span-3 {
-            grid-column: span 3;
-        }
-
-        .card-icon {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            display: inline-block;
-            color: var(--accent-neon);
-        }
-
-        .bento-card h3 {
-            font-size: 1.5rem;
-            color: var(--text-pure);
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .bento-card p {
-            font-size: 1rem;
-            color: var(--text-body);
-            font-weight: 300;
-        }
-
-        /* Стандарти ефективності всередині Bento */
-        .standards-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .standards-title {
-            font-size: 2rem;
-            color: var(--text-pure);
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.2;
-        }
-
-        .standards-title span {
-            color: var(--accent-neon);
-        }
-
-        .inline-features {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .feature-item h4 {
-            color: var(--text-pure);
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-        }
-
-        /* Заключний CTA блок */
-        .cta-card {
-            text-align: center;
-            background: radial-gradient(circle at top right, var(--accent-muted), transparent), var(--panel-bg);
-            border: 1px solid rgba(181, 244, 43, 0.2);
-            padding: 60px 40px;
-        }
-
-        .cta-card h2 {
-            font-size: 2.2rem;
-            color: var(--text-pure);
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .action-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--accent-neon);
-            color: var(--bg-main);
-            padding: 16px 40px;
-            border-radius: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1rem;
-            margin-top: 25px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(181, 244, 43, 0.2);
-        }
-
-        .action-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 35px rgba(181, 244, 43, 0.4);
-        }
-
-        /* Футер */
-        footer {
-            margin: 80px 0 40px 0;
-            padding-top: 30px;
-            border-top: 1px solid var(--panel-border);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 968px) {
-            .bento-grid { grid-template-columns: 1fr; }
-            .span-2, .span-3 { grid-column: span 1; }
-            .standards-container { grid-template-columns: 1fr; gap: 30px; }
-            footer { flex-direction: column; gap: 15px; text-align: center; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АГРАВІКА | Кормові добавки та інноваційні рішення</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="logo">AGRAVIKA<span>.</span></div>
-            <div style="font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">BioTech Core</div>
-        </header>
+<header>
+  <div class="container nav">
+    <div class="logo">АГРАВІКА</div>
+    <a href="mailto:info@agravika.com.ua" class="btn">Контакти</a>
+  </div>
+</header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="status-badge">
-                <div class="pulse"></div>
-                Платформа інтеграції рішень готується до запуску
-            </div>
-            <h1>Інноваційні рішення у сфері <span>біоактивних добавок.</span></h1>
-            <p>Високотехнологічні комплекси та кормові компоненти для професійного тваринництва та промислової аквакультури.</p>
-        </section>
+<section class="hero">
+  <div class="container">
+    <span class="badge">Інноваційні кормові технології</span>
+    <h1>Рішення для сучасного тваринництва</h1>
+    <p>Кормові добавки, органічні кислоти, фітобіотики та функціональні інгредієнти для підвищення ефективності виробництва.</p>
+    <a href="mailto:info@agravika.com.ua" class="btn">Отримати консультацію</a>
+  </div>
+</section>
 
-        <!-- Bento Grid Ecosystem -->
-        <section class="bento-grid">
-            
-            <!-- Card 1 (Wide Bento) -->
-            <div class="bento-card span-2">
-                <div class="card-icon">⚡</div>
-                <h3>Максимальний біо-вектор</h3>
-                <p>Добавки цілеспрямованої дії для оптимізації внутрішнього метаболізму, суттєвого покращення конверсії базового корму та досягнення стабільного, прогнозованого приросту живої маси.</p>
-            </div>
+<section class="section">
+  <div class="container">
+    <h2>Про компанію</h2>
+    <p>АГРАВІКА — постачальник сучасних кормових рішень для виробників комбікормів та тваринницьких господарств. Ми допомагаємо покращувати продуктивність, здоров’я тварин та економічну ефективність виробництва.</p>
+  </div>
+</section>
 
-            <!-- Card 2 (Standard Bento) -->
-            <div class="bento-card">
-                <div class="card-number" style="position:absolute; right:20px; top:20px; font-weight:900; opacity:0.03; font-size:6rem;">02</div>
-                <div class="card-icon">🛡️</div>
-                <h3>Природний біозахист</h3>
-                <p>Комплекси на основі високоефективних органічних кислот та фітобіотиків для стабілізації мікрофлори шлунково-кишкового тракту.</p>
-            </div>
-
-            <!-- Card 3 (Standard Bento) -->
-            <div class="bento-card">
-                <div class="card-icon">🧬</div>
-                <h3>Мікронутриентний баланс</h3>
-                <p>Високоточні індивідуальні бленди вітамінів, амінокислот та мінералів з абсолютною біодоступністю для кожного виду.</p>
-            </div>
-
-            <!-- Card 4 (Wide Bento - Standards) -->
-            <div class="bento-card span-2 span-3">
-                <div class="standards-container">
-                    <div class="standards-left">
-                        <div class="standards-title">Безкомпромісна якість, що трансформується у <span>прямий прибуток</span>.</div>
-                    </div>
-                    <div class="standards-right">
-                        <div class="inline-features">
-                            <div class="feature-item">
-                                <h4>🔬 Наукова експертиза</h4>
-                                <p>Рецептури, що базуються на фундаментальних фізіологічних дослідженнях та передових світових практиках.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🌱 Чистота сировини</h4>
-                                <p>Повний контроль та сертифікація інгредієнтів без використання баластних речовин.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5 (Full Width CTA) -->
-            <div class="bento-card span-3 cta-card">
-                <h2>Формуємо фінальну онлайн-платформу</h2>
-                <p>Незабаром відкриється повний каталог продукції, інтерактивні технічні карти та автоматичний калькулятор розрахунку дозування.</p>
-                <a href="mailto:info@agravika.com.ua" class="action-btn">
-                    Надіслати запит: info@agravika.com.ua 
-                    <span style="font-size: 1.2rem;">→</span>
-                </a>
-            </div>
-
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
-            <div>Офіційний цифровий домен: <span style="color: var(--text-pure); font-weight: 600;">agravika.com.ua</span></div>
-        </footer>
+<section class="section gray">
+  <div class="container">
+    <h2>Наші рішення</h2>
+    <div class="grid">
+      <div class="card"><h3>Органічні кислоти</h3><p>Підтримка травлення та контроль мікрофлори.</p></div>
+      <div class="card"><h3>Фітобіотики</h3><p>Натуральні рішення для продуктивності.</p></div>
+      <div class="card"><h3>Кормові добавки</h3><p>Покращення конверсії корму.</p></div>
+      <div class="card"><h3>Функціональні інгредієнти</h3><p>Інноваційні компоненти для кормовиробництва.</p></div>
+      <div class="card"><h3>Технічний супровід</h3><p>Практичні рекомендації та підтримка.</p></div>
+      <div class="card"><h3>Індивідуальні рішення</h3><p>Підбір продуктів під конкретні задачі.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Чому обирають нас</h2>
+    <div class="grid">
+      <div class="card"><h3>Перевірені постачальники</h3></div>
+      <div class="card"><h3>Технологічна експертиза</h3></div>
+      <div class="card"><h3>Практичний досвід</h3></div>
+      <div class="card"><h3>Орієнтація на результат</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Готові до співпраці?</h2>
+    <p>Зв'яжіться з нами для підбору оптимального рішення.</p>
+    <a href="mailto:info@agravika.com.ua" class="btn">info@agravika.com.ua</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 АГРАВІКА. Всі права захищено.
+  </div>
+</footer>
 
 </body>
 </html>
