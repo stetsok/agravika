@@ -42,12 +42,14 @@
             }
         }
 
+        /* Додано плавний скрол для самого body */
         body {
             background-color: var(--bg-canvas);
             color: var(--color-muted);
             line-height: 1.6;
             padding-bottom: env(safe-area-inset-bottom);
             position: relative;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3, .logo-text, .metric {
@@ -340,169 +342,88 @@
             color: var(--color-muted);
         }
 
-        /* Контактний модуль */
+        /* Контактний модуль (Чисто інформаційний, без форми) */
         .contact-section {
             margin-top: clamp(50px, 8vw, 80px);
-            display: grid;
-            grid-template-columns: 1.2fr 1.8fr;
-            gap: 24px;
         }
 
         .info-pane {
             background: var(--color-brand);
             color: #ffffff;
-            padding: 40px 32px;
+            padding: clamp(35px, 5vw, 60px) clamp(25px, 4vw, 45px);
             border-radius: 28px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 40px;
         }
 
         .info-pane h3 {
             color: #ffffff;
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
         }
 
-        .info-list {
-            list-style: none;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
         }
 
-        .info-list li {
-            margin-bottom: 28px;
+        .info-item {
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 16px;
         }
 
-        .info-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-list .icon {
-            font-size: 1.2rem;
+        .info-pane .icon {
+            font-size: 1.3rem;
             background: rgba(255,255,255,0.08);
-            padding: 6px 10px;
-            border-radius: 10px;
+            padding: 8px 12px;
+            border-radius: 12px;
             line-height: 1;
+            flex-shrink: 0;
         }
 
-        .info-list .text-caption {
+        .info-pane .text-caption {
             font-size: 0.8rem;
             color: #94a3b8;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
-        .info-list a {
+        .info-pane a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             display: inline-block;
-            padding: 2px 0;
             transition: color 0.2s;
         }
 
-        .info-list a:hover {
+        .info-pane a:hover {
             color: var(--color-accent);
         }
 
-        .info-list p {
+        .info-pane p {
             color: #e2e8f0;
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             font-weight: 500;
+            line-height: 1.5;
         }
 
         .corporate-tag {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: #94a3b8;
-            background: rgba(255,255,255,0.05);
-            padding: 12px 16px;
-            border-radius: 12px;
-            line-height: 1.4;
-            margin-top: 24px;
-        }
-
-        /* Форма зворотного зв'язку */
-        .cta-pane {
-            background: radial-gradient(circle at 90% 10%, #f0fdf4, transparent), var(--bg-card);
-            border: 1px solid rgba(22, 165, 74, 0.15);
-            padding: 50px 40px;
-            border-radius: 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .cta-pane h2 {
-            font-size: clamp(1.7rem, 4vw, 2.2rem);
-            font-weight: 800;
-            margin-bottom: 14px;
-            letter-spacing: -1px;
-        }
-
-        .cta-pane p {
-            font-size: 1.05rem;
-            max-width: 520px;
-            margin-bottom: 25px;
-        }
-
-        .lead-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            max-width: 520px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group input, .form-group textarea {
-            padding: 14px 18px;
-            border: 1px solid var(--border-soft);
-            border-radius: 12px;
-            font-size: 0.95rem;
-            outline: none;
-            background: #f8fafc;
-            transition: all 0.2s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--color-accent);
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.08);
-        }
-
-        .btn-submit {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: var(--color-brand);
-            color: #ffffff;
-            padding: 16px 42px;
+            background: rgba(255,255,255,0.04);
+            padding: 16px 24px;
             border-radius: 14px;
-            font-weight: 600;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(15, 31, 21, 0.12);
-            transition: all 0.25s;
-            align-self: flex-start;
-        }
-
-        .btn-submit:hover {
-            background: #162d1e;
-            transform: translateY(-1px);
-            box-shadow: 0 12px 28px rgba(15, 31, 21, 0.18);
+            line-height: 1.5;
+            max-width: 100%;
+            border-left: 3px solid var(--color-accent);
         }
 
         .btn-primary {
@@ -544,7 +465,7 @@
             .w-2 { grid-column: span 1; }
             .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .intro-block { flex-direction: column; text-align: center; gap: 20px; }
-            .contact-section { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; gap: 24px; }
         }
 
         @media (max-width: 768px) {
@@ -554,13 +475,13 @@
             .metrics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             nav { display: none; }
             footer { flex-direction: column; gap: 15px; text-align: center; }
-            .btn-submit, .btn-primary { width: 100%; }
-            .info-pane { gap: 35px; }
+            .btn-primary { width: 100%; }
             .service-wrapper { max-width: 100%; }
         }
     </style>
 </head>
-<body>
+
+<body id="top">
 
     <header>
         <div class="nav-wrapper">
@@ -573,13 +494,11 @@
                 <a href="#advantages">Переваги</a>
                 <a href="#contact">Контакти</a>
             </nav>
-            <a class="cta-inline" href="#contact">Консультація</a>
+            <a class="cta-inline" href="#contact">Контакти</a>
         </div>
     </header>
 
     <main class="container">
-        
-        <div id="top" style="position: absolute; top: 0; left: 0;"></div>
         
         <section class="hero-section">
             <div class="badge-status">
@@ -587,7 +506,7 @@
             </div>
             <h1>Технологічні компоненти для <span>професійного тваринництва.</span></h1>
             <p>Науково обґрунтовані добавки, системи органічного захисту та фітобіотики, розроблені для підвищення рентабельності сучасних агрокомплексів.</p>
-            <a class="btn-primary" href="#contact">Прорахувати індивідуальну рецептуру →</a>
+            <a class="btn-primary" href="#contact">Зв'язатися з компанією →</a>
         </section>
 
         <section id="about" class="bento-card w-3">
@@ -617,7 +536,7 @@
                         <span class="card-icon" role="img" aria-label="Паросток">🌱</span>
                     </div>
                     <div>
-                        <h3>Фітобіотики</h3>
+                        <h3>Фитобіотики</h3>
                         <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивних екстрактів цільових рослин.</p>
                     </div>
                 </div>
@@ -684,7 +603,7 @@
                 </div>
                 <div class="metric-item">
                     <div class="metric">Контроль</div>
-                    <span>Повний супровід від аналізу матриці до впровадження</span>
+                    <span>Повний супровід від аналізу matrix-структур до впровадження</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Окупність</div>
@@ -694,59 +613,41 @@
         </section>
 
         <section id="contact" class="contact-section">
-            
             <div class="info-pane">
                 <div>
                     <h3>Контакти</h3>
-                    <ul class="info-list">
-                        <li>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
                             <span class="icon" role="img" aria-label="Телефон">📞</span>
                             <div>
                                 <div class="text-caption">Телефон головного офісу</div>
                                 <a href="tel:+380676734353">+38 (067) 673-43-53</a>
                             </div>
-                        </li>
-                        <li>
+                        </div>
+                        
+                        <div class="info-item">
                             <span class="icon" role="img" aria-label="Пошта">✉</span>
                             <div>
                                 <div class="text-caption">Електронна пошта</div>
                                 <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
                             </div>
-                        </li>
-                        <li>
+                        </div>
+                        
+                        <div class="info-item">
                             <span class="icon" role="img" aria-label="Маркер мапи">📍</span>
                             <div>
                                 <div class="text-caption">Юридична адреса</div>
                                 <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="corporate-tag">
-                    <strong>Офіційний суб'єкт:</strong><br>
-                    Усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
+                    <strong>Офіційний суб'єкт:</strong> Усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
                 </div>
             </div>
-
-            <div class="cta-pane">
-                <h2>Потрібен професійний розрахунок?</h2>
-                <p>Залиште контакти або надішліть параметри поточного раціону. Наші технологи зв'яжуться з вами протягом робочого дня.</p>
-                
-                <form class="lead-form" action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Ваше ім'я або компанія" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Контактний телефон" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="3" placeholder="Опишіть завдання або необхідні компоненти (напр. фітобіотики, премікси)"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Надіслати запит →</button>
-                </form>
-            </div>
-
         </section>
 
         <footer>
