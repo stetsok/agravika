@@ -36,7 +36,6 @@
             -webkit-text-size-adjust: 100%;
         }
 
-        /* Оптимізація плавного скролу для iOS Safari */
         @media (prefers-reduced-motion: no-preference) {
             html {
                 scroll-behavior: smooth;
@@ -53,6 +52,11 @@
         h1, h2, h3, .logo-text, .metric {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--color-brand);
+        }
+
+        /* Фікс перекриття секцій при скролі меню */
+        section[id] {
+            scroll-margin-top: 100px;
         }
 
         .container {
@@ -263,7 +267,6 @@
             color: var(--color-muted);
         }
 
-        /* Винесення стилів великої сервісної картки в CSS-класи для кращої адаптивності */
         .bento-card.service-card {
             background: var(--gradient-subtle);
         }
@@ -365,7 +368,6 @@
             list-style: none;
         }
 
-        /* Збільшено відступи клікових зон для кращого UX на смартфонах */
         .info-list li {
             margin-bottom: 28px;
             display: flex;
@@ -424,6 +426,7 @@
             margin-top: 24px;
         }
 
+        /* Стилі інтерактивної форми */
         .cta-pane {
             background: radial-gradient(circle at 90% 10%, #f0fdf4, transparent), var(--bg-card);
             border: 1px solid rgba(22, 165, 74, 0.15);
@@ -444,9 +447,63 @@
         .cta-pane p {
             font-size: 1.05rem;
             max-width: 520px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
+        .lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 520px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 14px 18px;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            background: #f8fafc;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--color-accent);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.08);
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--color-brand);
+            color: #ffffff;
+            padding: 16px 42px;
+            border-radius: 14px;
+            font-weight: 600;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(15, 31, 21, 0.12);
+            transition: all 0.25s;
+            align-self: flex-start;
+        }
+
+        .btn-submit:hover {
+            background: #162d1e;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(15, 31, 21, 0.18);
+        }
+
+        /* Зворотна сумісність для посилань у стилі кнопок */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -463,11 +520,9 @@
             transition: all 0.25s;
             align-self: flex-start;
         }
-
         .btn-primary:hover {
             background: #162d1e;
             transform: translateY(-1px);
-            box-shadow: 0 12px 28px rgba(15, 31, 21, 0.18);
         }
 
         /* Футер */
@@ -498,9 +553,9 @@
             .metrics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             nav { display: none; }
             footer { flex-direction: column; gap: 15px; text-align: center; }
-            .btn-primary { width: 100%; }
+            .btn-submit, .btn-primary { width: 100%; }
             .info-pane { gap: 35px; }
-            .service-wrapper { max-width: 100%; } /* Безпечне скидання ширини на мобілці */
+            .service-wrapper { max-width: 100%; }
         }
     </style>
 </head>
@@ -618,19 +673,19 @@
             <div class="metrics-grid">
                 <div class="metric-item">
                     <div class="metric">Сертифікація</div>
-                    <span>Лише перевірені світові лідери виробництва</span>
+                    <span>Компоненти від лідерів з сертифікацією GMP+ / FAMI-QS</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Експертиза</div>
-                    <span>Глибокі практичні знання галузі</span>
+                    <span>Глибокі практичні знання та розрахунок раціонів</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Контроль</div>
-                    <span>Повний супровід від аналізу до впровадження</span>
+                    <span>Повний супровід від аналізу матриці до впровадження</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Окупність</div>
-                    <span>Рішення, що безпосередньо генерують прибуток</span>
+                    <span>Оптимізація FCR та пряме зниження собівартості корму</span>
                 </div>
             </div>
         </section>
@@ -673,10 +728,20 @@
 
             <div class="cta-pane">
                 <h2>Потрібен професійний розрахунок?</h2>
-                <p>Надішліть технічне завдання або замовте аудит раціону. Наші біохіміки та технологи зв'яжуться з вами протягом робочого дня.</p>
-                <a class="btn-primary" href="mailto:info@agravika.com.ua">
-                    Надіслати запит на пошту →
-                </a>
+                <p>Залиште контакти або надішліть параметри поточного раціону. Наші технологи зв'яжуться з вами протягом робочого дня.</p>
+                
+                <form class="lead-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ваше ім'я або компанія" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Контактний телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="3" placeholder="Опишіть завдання або необхідні компоненти (напр. фітобіотики, премікси)"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Надіслати запит →</button>
+                </form>
             </div>
 
         </section>
