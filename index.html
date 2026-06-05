@@ -36,6 +36,13 @@
             -webkit-text-size-adjust: 100%;
         }
 
+        /* Оптимізація плавного скролу для iOS Safari */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
         body {
             background-color: var(--bg-canvas);
             color: var(--color-muted);
@@ -78,7 +85,6 @@
             padding-right: max(24px, env(safe-area-inset-right));
         }
 
-        /* Оновлені стилі для клікабельного логотипу */
         .logo-link {
             text-decoration: none;
             display: inline-block;
@@ -237,6 +243,14 @@
             opacity: 0.9;
         }
 
+        .bento-card h2.intro-title {
+            font-size: clamp(1.5rem, 4vw, 1.9rem);
+            font-weight: 800;
+            line-height: 1.2;
+            flex: 1;
+            letter-spacing: -1px;
+        }
+
         .bento-card h3 {
             font-size: clamp(1.2rem, 3vw, 1.35rem);
             font-weight: 700;
@@ -249,20 +263,28 @@
             color: var(--color-muted);
         }
 
+        /* Винесення стилів великої сервісної картки в CSS-класи для кращої адаптивності */
+        .bento-card.service-card {
+            background: var(--gradient-subtle);
+        }
+        .service-wrapper {
+            max-width: 750px;
+        }
+        .service-title {
+            font-size: 1.4rem;
+        }
+        .service-text {
+            font-size: 1rem;
+            margin-top: 8px;
+            color: var(--color-muted);
+        }
+
         /* Інтро компанії */
         .intro-block {
             display: flex;
             gap: 40px;
             align-items: center;
             text-align: left;
-        }
-
-        .intro-block h2 {
-            font-size: clamp(1.5rem, 4vw, 1.9rem);
-            font-weight: 800;
-            line-height: 1.2;
-            flex: 1;
-            letter-spacing: -1px;
         }
 
         .intro-block p {
@@ -343,11 +365,16 @@
             list-style: none;
         }
 
+        /* Збільшено відступи клікових зон для кращого UX на смартфонах */
         .info-list li {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             display: flex;
             align-items: flex-start;
             gap: 14px;
+        }
+
+        .info-list li:last-child {
+            margin-bottom: 0;
         }
 
         .info-list .icon {
@@ -364,14 +391,16 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .info-list a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 2px 0;
             transition: color 0.2s;
         }
 
@@ -392,6 +421,7 @@
             padding: 12px 16px;
             border-radius: 12px;
             line-height: 1.4;
+            margin-top: 24px;
         }
 
         .cta-pane {
@@ -470,19 +500,18 @@
             footer { flex-direction: column; gap: 15px; text-align: center; }
             .btn-primary { width: 100%; }
             .info-pane { gap: 35px; }
+            .service-wrapper { max-width: 100%; } /* Безпечне скидання ширини на мобілці */
         }
     </style>
 </head>
 <body>
 
-    <!-- Навігація -->
-    <header>
+    <header id="top">
         <div class="nav-wrapper">
-            <!-- Оновлений логотип, упакований у посилання -->
-            <a href="#" class="logo-link">
+            <a href="#top" class="logo-link" aria-label="AGRAVIKA - На початок сторінки">
                 <div class="logo-text">AGRAVIKA<span>.</span></div>
             </a>
-            <nav>
+            <nav aria-label="Головна навігація сайту">
                 <a href="#about">Про нас</a>
                 <a href="#solutions">Рішення</a>
                 <a href="#advantages">Переваги</a>
@@ -492,34 +521,31 @@
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         
-        <!-- Головний банер (Hero) -->
         <section class="hero-section">
             <div class="badge-status">
-                <div class="live-dot"></div> Новий рівень конверсії кормів
+                <div class="live-dot" aria-hidden="true"></div> Новий рівень конверсії кормів
             </div>
             <h1>Технологічні компоненти для <span>професійного тваринництва.</span></h1>
             <p>Науково обґрунтовані добавки, системи органічного захисту та фітобіотики, розроблені для підвищення рентабельності сучасних агрокомплексів.</p>
             <a class="btn-primary" href="#contact">Прорахувати індивідуальну рецептуру →</a>
         </section>
 
-        <!-- Про компанію -->
         <section id="about" class="bento-card w-3">
             <div class="intro-block">
-                <h2>Ваш технологічний партнер у створенні раціонів.</h2>
+                <h2 class="intro-title">Ваш технологічний партнер у створенні раціонів.</h2>
                 <p>Компанія <strong>АГРАВІКА</strong> спеціалізується на інтеграції передових світових рішень у сфері годівлі. Ми допомагаємо виробникам комбікормів та великим тваринницьким комплексам автоматизувати захист здоров'я тварин та забезпечити максимальний коефіцієнт засвоєння поживних речовин.</p>
             </div>
         </section>
 
-        <!-- Екосистема рішень (Bento Grid) -->
         <section id="solutions">
             <div class="bento-container">
                 
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Здоров'я ЗКТ</span>
-                        <span class="card-icon">🧪</span>
+                        <span class="card-icon" role="img" aria-label="Пробірка">🧪</span>
                     </div>
                     <div>
                         <h3>Органічні кислоти</h3>
@@ -530,10 +556,10 @@
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Біостимуляція</span>
-                        <span class="card-icon">🌱</span>
+                        <span class="card-icon" role="img" aria-label="Паросток">🌱</span>
                     </div>
                     <div>
-                        <h3>Фильтр-фітобіотики</h3>
+                        <h3>Фітобіотики</h3>
                         <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивних екстрактів цільових рослин.</p>
                     </div>
                 </div>
@@ -541,7 +567,7 @@
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Ефективність</span>
-                        <span class="card-icon">⚡</span>
+                        <span class="card-icon" role="img" aria-label="Блискавка">⚡</span>
                     </div>
                     <div>
                         <h3>Кормові добавки</h3>
@@ -552,7 +578,7 @@
                 <div class="bento-card w-2">
                     <div class="card-top">
                         <span class="card-label">Біо-Інжиніринг</span>
-                        <span class="card-icon">🔬</span>
+                        <span class="card-icon" role="img" aria-label="Мікроскоп">🔬</span>
                     </div>
                     <div>
                         <h3>Функціональні інгредієнти</h3>
@@ -563,7 +589,7 @@
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Точність</span>
-                        <span class="card-icon">🧬</span>
+                        <span class="card-icon" role="img" aria-label="ДНК">🧬</span>
                     </div>
                     <div>
                         <h3>Премікси</h3>
@@ -571,21 +597,20 @@
                     </div>
                 </div>
 
-                <div class="bento-card w-3" style="background: var(--gradient-subtle);">
+                <div class="bento-card w-3 service-card">
                     <div class="card-top">
                         <span class="card-label" style="background: var(--color-brand); color: #fff;">Сервіс</span>
-                        <span class="card-icon">📈</span>
+                        <span class="card-icon" role="img" aria-label="Графік вгору">📈</span>
                     </div>
-                    <div style="max-width: 750px;">
-                        <h3 style="font-size: 1.4rem;">Технічний аудит та оптимізація matrix-структур годівлі</h3>
-                        <p style="font-size: 1rem; margin-top: 8px; color: var(--color-muted);">Ми пропонуємо не просто окремі продукти, а повний комплекс аналітики. Наші фахівці проводять розрахунки та коригування діючих раціонів для досягнення максимальних економічних показників вашого підприємства.</p>
+                    <div class="service-wrapper">
+                        <h3 class="service-title">Технічний аудит та оптимізація matrix-структур годівлі</h3>
+                        <p class="service-text">Ми пропонуємо не просто окремі продукти, а повний комплекс аналітики. Наші фахівці проводять розрахунки та коригування діючих раціонів для досягнення максимальних економічних показників вашого підприємства.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Чому обирають нас -->
         <section id="advantages">
             <div class="section-header">
                 <h2>Стандарти роботи AGRAVIKA</h2>
@@ -610,30 +635,28 @@
             </div>
         </section>
 
-        <!-- Контакти -->
         <section id="contact" class="contact-section">
             
-            <!-- Панель 1: Публічні та юридичні контакти -->
             <div class="info-pane">
                 <div>
                     <h3>Контакти</h3>
                     <ul class="info-list">
                         <li>
-                            <span class="icon">📞</span>
+                            <span class="icon" role="img" aria-label="Телефон">📞</span>
                             <div>
                                 <div class="text-caption">Телефон головного офісу</div>
                                 <a href="tel:+380676734353">+38 (067) 673-43-53</a>
                             </div>
                         </li>
                         <li>
-                            <span class="icon">✉</span>
+                            <span class="icon" role="img" aria-label="Пошта">✉</span>
                             <div>
                                 <div class="text-caption">Електронна пошта</div>
                                 <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
                             </div>
                         </li>
                         <li>
-                            <span class="icon">📍</span>
+                            <span class="icon" role="img" aria-label="Маркер мапи">📍</span>
                             <div>
                                 <div class="text-caption">Юридична адреса</div>
                                 <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
@@ -648,7 +671,6 @@
                 </div>
             </div>
 
-            <!-- Панель 2: СТА -->
             <div class="cta-pane">
                 <h2>Потрібен професійний розрахунок?</h2>
                 <p>Надішліть технічне завдання або замовте аудит раціону. Наші біохіміки та технологи зв'яжуться з вами протягом робочого дня.</p>
@@ -659,13 +681,12 @@
 
         </section>
 
-        <!-- Футер -->
         <footer>
             <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
             <div>Офіційний цифровий домен: <strong>agravika.com.ua</strong></div>
         </footer>
 
-    </div>
+    </main>
 
 </body>
 </html>
