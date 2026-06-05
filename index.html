@@ -78,10 +78,21 @@
             padding-right: max(24px, env(safe-area-inset-right));
         }
 
+        /* Оновлені стилі для клікабельного логотипу */
+        .logo-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+
         .logo-text {
             font-size: 1.4rem;
             font-weight: 800;
             letter-spacing: 1.5px;
+            transition: opacity 0.2s;
+        }
+
+        .logo-link:hover .logo-text {
+            opacity: 0.85;
         }
 
         .logo-text span {
@@ -467,7 +478,10 @@
     <!-- Навігація -->
     <header>
         <div class="nav-wrapper">
-            <div class="logo-text">AGRAVIKA<span>.</span></div>
+            <!-- Оновлений логотип, упакований у посилання -->
+            <a href="#" class="logo-link">
+                <div class="logo-text">AGRAVIKA<span>.</span></div>
+            </a>
             <nav>
                 <a href="#about">Про нас</a>
                 <a href="#solutions">Рішення</a>
@@ -519,7 +533,7 @@
                         <span class="card-icon">🌱</span>
                     </div>
                     <div>
-                        <h3>Фітобіотики</h3>
+                        <h3>Фильтр-фітобіотики</h3>
                         <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивних екстрактів цільових рослин.</p>
                     </div>
                 </div>
