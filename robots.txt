@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agravika.com.ua/sitemap.xml
