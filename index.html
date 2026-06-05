@@ -6,6 +6,9 @@
     <title>AGRAVIKA | Біохімічні рішення для агросектору</title>
     <meta name="description" content="Високотехнологічні кормові компоненти, фітобіотики та системи біозахисту нового покоління для промислового тваринництва.">
     
+    <!-- Інтегрована SVG Фавіконка (Сучасна монограма літери "А" без крапки) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f15'/%3E%3Cpath d='M7 24 L14.5 7 L17.5 7 L25 24 H20.5 L19.2 21 H12.8 L11.5 24 Z M13.7 18 H18.3 L16 12.6 Z' fill='%23ffffff'/%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,7 +45,6 @@
             }
         }
 
-        /* Додано плавний скрол для самого body */
         body {
             background-color: var(--bg-canvas);
             color: var(--color-muted);
@@ -57,7 +59,6 @@
             color: var(--color-brand);
         }
 
-        /* Фікс перекриття секцій при скролі меню */
         section[id] {
             scroll-margin-top: 100px;
         }
@@ -71,7 +72,6 @@
             position: relative;
         }
 
-        /* Навігаційна панель */
         header {
             background: rgba(248, 250, 252, 0.85);
             backdrop-filter: blur(20px);
@@ -146,7 +146,6 @@
             transform: translateY(-1px);
         }
 
-        /* Hero Секція */
         .hero-section {
             padding: clamp(50px, 10vw, 90px) 0 60px;
             text-align: center;
@@ -198,7 +197,6 @@
             font-weight: 400;
         }
 
-        /* Bento Grid структура */
         .bento-container {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -286,7 +284,6 @@
             color: var(--color-muted);
         }
 
-        /* Інтро компанії */
         .intro-block {
             display: flex;
             gap: 40px;
@@ -300,7 +297,6 @@
             line-height: 1.65;
         }
 
-        /* Секція переваг */
         .section-header {
             text-align: center;
             margin: clamp(50px, 8vw, 80px) 0 40px;
@@ -342,7 +338,6 @@
             color: var(--color-muted);
         }
 
-        /* Контактний модуль (Чисто інформаційний, без форми) */
         .contact-section {
             margin-top: clamp(50px, 8vw, 80px);
         }
@@ -447,7 +442,6 @@
             transform: translateY(-1px);
         }
 
-        /* Футер */
         footer {
             margin: clamp(50px, 8vw, 90px) 0 40px;
             padding-top: 30px;
@@ -459,7 +453,6 @@
             color: #64748b;
         }
 
-        /* Мобільні адаптиви */
         @media (max-width: 1024px) {
             .bento-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .w-2 { grid-column: span 1; }
