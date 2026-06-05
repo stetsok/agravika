@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AGRAVIKA | Біохімічні рішення для агросектору</title>
     <meta name="description" content="Високотехнологічні кормові компоненти, фітобіотики та системи біозахисту нового покоління для промислового тваринництва.">
     
@@ -28,6 +28,19 @@
             padding: 0;
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--color-muted);
+            line-height: 1.6;
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
         h1, h2, h3, .logo-text, .metric {
@@ -35,27 +48,19 @@
             color: var(--color-brand);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-canvas);
-            color: var(--color-muted);
-            line-height: 1.6;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+            padding-left: max(24px, env(safe-area-inset-left));
+            padding-right: max(24px, env(safe-area-inset-right));
         }
 
         /* Навігаційна панель */
         header {
             background: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             border-bottom: 1px solid var(--border-soft);
@@ -114,7 +119,7 @@
 
         /* Hero Секція */
         .hero-section {
-            padding: 90px 0 60px;
+            padding: clamp(50px, 10vw, 90px) 0 60px;
             text-align: center;
         }
 
@@ -143,7 +148,7 @@
         }
 
         h1 {
-            font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -1.5px;
@@ -160,14 +165,14 @@
         .hero-section p {
             max-width: 700px;
             margin: 0 auto 35px;
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
             font-weight: 400;
         }
 
         /* Bento Grid структура */
         .bento-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -176,7 +181,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-soft);
             border-radius: 24px;
-            padding: 40px 35px;
+            padding: clamp(25px, 4vw, 40px) clamp(20px, 4vw, 35px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -218,7 +223,7 @@
         }
 
         .bento-card h3 {
-            font-size: 1.35rem;
+            font-size: clamp(1.2rem, 3vw, 1.35rem);
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.5px;
@@ -238,7 +243,7 @@
         }
 
         .intro-block h2 {
-            font-size: 1.9rem;
+            font-size: clamp(1.5rem, 4vw, 1.9rem);
             font-weight: 800;
             line-height: 1.2;
             flex: 1;
@@ -254,18 +259,18 @@
         /* Секція переваг */
         .section-header {
             text-align: center;
-            margin: 80px 0 40px;
+            margin: clamp(50px, 8vw, 80px) 0 40px;
         }
 
         .section-header h2 {
-            font-size: 2rem;
+            font-size: clamp(1.6rem, 4vw, 2rem);
             font-weight: 800;
             letter-spacing: -0.5px;
         }
 
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
         }
 
@@ -297,14 +302,14 @@
         .cta-block {
             background: radial-gradient(circle at 85% 15%, #f0fdf4, transparent), var(--bg-card);
             border: 1px solid rgba(22, 165, 74, 0.2);
-            padding: 60px 40px;
+            padding: clamp(35px, 6vw, 60px) clamp(20px, 4vw, 40px);
             border-radius: 28px;
             text-align: center;
             margin-top: 40px;
         }
 
         .cta-block h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.7rem, 5vw, 2.2rem);
             font-weight: 800;
             margin-bottom: 12px;
             letter-spacing: -1px;
@@ -339,7 +344,7 @@
 
         /* Футер */
         footer {
-            margin: 90px 0 40px;
+            margin: clamp(50px, 8vw, 90px) 0 40px;
             padding-top: 30px;
             border-top: 1px solid var(--border-soft);
             display: flex;
@@ -349,26 +354,26 @@
             color: #64748b;
         }
 
+        /* Мобільні адаптиви, повністю оптимізовані під Safari на iPhone */
         @media (max-width: 1024px) {
-            .bento-container { grid-template-columns: repeat(2, 1fr); }
+            .bento-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .w-2 { grid-column: span 1; }
-            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .intro-block { flex-direction: column; text-align: center; gap: 20px; }
         }
 
         @media (max-width: 768px) {
-            .bento-container { grid-template-columns: 1fr; }
+            .bento-container { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             .w-3 { grid-column: span 1; }
-            .metrics-grid { grid-template-columns: 1fr; }
+            .metrics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             nav { display: none; }
             footer { flex-direction: column; gap: 15px; text-align: center; }
-            .hero-section { padding: 60px 0 30px; }
+            .btn-primary { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Навігація -->
     <header>
         <div class="container nav-wrapper">
             <div class="logo-text">AGRAVIKA<span>.</span></div>
@@ -383,7 +388,6 @@
 
     <div class="container">
         
-        <!-- Головний банер (Hero) -->
         <section class="hero-section">
             <div class="badge-status">
                 <div class="live-dot"></div> Новий рівень конверсії кормів
@@ -393,7 +397,6 @@
             <a class="btn-primary" href="#contact">Прорахувати індивідуальну рецептуру →</a>
         </section>
 
-        <!-- Про компанію -->
         <section id="about" class="bento-card w-3">
             <div class="intro-block">
                 <h2>Ваш технологічний партнер у створенні раціонів.</h2>
@@ -401,7 +404,6 @@
             </div>
         </section>
 
-        <!-- Екосистема рішень (Bento Grid) -->
         <section id="solutions">
             <div class="bento-container">
                 
@@ -445,7 +447,7 @@
                     </div>
                     <div>
                         <h3>Функціональні інгредієнти</h3>
-                        <p>Спеціалізовані мікрокомпоненти, що дозволяють створювати збалансовані преміальні корми нового покоління за оптимізованою собівартістю.</p>
+                        <p>Спеціалізовані мікрокомпоненти, що дозволяють створювати збалансовані pre-mix корми нового покоління за оптимізованою собівартістю.</p>
                     </div>
                 </div>
 
@@ -474,7 +476,6 @@
             </div>
         </section>
 
-        <!-- Чому обирають нас -->
         <section id="advantages">
             <div class="section-header">
                 <h2>Стандарти роботи AGRAVIKA</h2>
@@ -499,7 +500,6 @@
             </div>
         </section>
 
-        <!-- Контактна секція (CTA) -->
         <section id="contact" class="cta-block">
             <h2>Потрібен професійний розрахунок?</h2>
             <p>Залиште запит, і наші спеціалісти допоможуть підібрати компоненти під специфіку та технологічні завдання вашого виробництва.</p>
@@ -508,7 +508,6 @@
             </a>
         </section>
 
-        <!-- Футер -->
         <footer>
             <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
             <div>Офіційний цифровий домен: <strong>agravika.com.ua</strong></div>
