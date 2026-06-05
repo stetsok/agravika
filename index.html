@@ -71,7 +71,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 20px 24px; /* Додано бокові відступи для правильного відображення в шапці */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: max(24px, env(safe-area-inset-left));
+            padding-right: max(24px, env(safe-area-inset-right));
         }
 
         .logo-text {
@@ -354,7 +358,7 @@
             color: #64748b;
         }
 
-        /* Мобільні адаптиви, повністю оптимізовані під Safari на iPhone */
+        /* Мобільні адаптиви */
         @media (max-width: 1024px) {
             .bento-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .w-2 { grid-column: span 1; }
@@ -363,6 +367,7 @@
         }
 
         @media (max-width: 768px) {
+            .nav-wrapper { padding: 16px 20px; } /* Акуратні відступи для мобільних екранів */
             .bento-container { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             .w-3 { grid-column: span 1; }
             .metrics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
@@ -374,8 +379,9 @@
 </head>
 <body>
 
+    <!-- Навігація -->
     <header>
-        <div class="container nav-wrapper">
+        <div class="nav-wrapper">
             <div class="logo-text">AGRAVIKA<span>.</span></div>
             <nav>
                 <a href="#about">Про нас</a>
@@ -388,6 +394,7 @@
 
     <div class="container">
         
+        <!-- Головний банер (Hero) -->
         <section class="hero-section">
             <div class="badge-status">
                 <div class="live-dot"></div> Новий рівень конверсії кормів
@@ -397,6 +404,7 @@
             <a class="btn-primary" href="#contact">Прорахувати індивідуальну рецептуру →</a>
         </section>
 
+        <!-- Про компанію -->
         <section id="about" class="bento-card w-3">
             <div class="intro-block">
                 <h2>Ваш технологічний партнер у створенні раціонів.</h2>
@@ -404,6 +412,7 @@
             </div>
         </section>
 
+        <!-- Екосистема рішень (Bento Grid) -->
         <section id="solutions">
             <div class="bento-container">
                 
@@ -425,7 +434,7 @@
                     </div>
                     <div>
                         <h3>Фітобіотики</h3>
-                        <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивних екстрактів цільових рослин.</p>
+                        <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивных екстрактів цільових рослин.</p>
                     </div>
                 </div>
 
@@ -476,6 +485,7 @@
             </div>
         </section>
 
+        <!-- Чому обирають нас -->
         <section id="advantages">
             <div class="section-header">
                 <h2>Стандарти роботи AGRAVIKA</h2>
@@ -500,6 +510,7 @@
             </div>
         </section>
 
+        <!-- Контактна секція (CTA) -->
         <section id="contact" class="cta-block">
             <h2>Потрібен професійний розрахунок?</h2>
             <p>Залиште запит, і наші спеціалісти допоможуть підібрати компоненти під специфіку та технологічні завдання вашого виробництва.</p>
@@ -508,6 +519,7 @@
             </a>
         </section>
 
+        <!-- Футер -->
         <footer>
             <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
             <div>Офіційний цифровий домен: <strong>agravika.com.ua</strong></div>
