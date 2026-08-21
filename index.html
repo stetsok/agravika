@@ -3,24 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>AGRAVIKA | Біохімічні рішення для агросектору</title>
-    <meta name="description" content="Високотехнологічні кормові компоненти, фітобіотики та системи біозахисту нового покоління для промислового тваринництва.">
-    
-    <!-- Інтегрована SVG Фавіконка (Сучасна монограма літери "А" без крапки) -->
+
+    <title>Кормові добавки, премікси та фітобіотики | AGRAVIKA</title>
+    <meta name="description" content="АГРАВІКА — постачальник кормових добавок, преміксів, органічних кислот і фітобіотиків для промислового тваринництва. Розрахунок раціонів, доставка по Україні.">
+    <link rel="canonical" href="https://agravika.com.ua/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#0f1f15">
+
+    <!-- Open Graph / соцмережі та месенджери -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:site_name" content="AGRAVIKA">
+    <meta property="og:url" content="https://agravika.com.ua/">
+    <meta property="og:title" content="Кормові добавки, премікси та фітобіотики | AGRAVIKA">
+    <meta property="og:description" content="Компоненти для промислового тваринництва: органічні кислоти, фітобіотики, премікси. Технічний аудит і розрахунок раціонів.">
+    <!-- TODO: завантажити у корінь репозиторію файл og-image.jpg розміром 1200×630 px -->
+    <meta property="og:image" content="https://agravika.com.ua/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AGRAVIKA — біохімічні рішення для агросектору">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- TODO: додати apple-touch-icon.png 180×180 px для iOS -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* Agravika Ultra Light Design System */
         :root {
-            --bg-canvas: #f8fafc;       
-            --bg-card: #ffffff;         
-            --border-soft: #e2e8f0;     
-            --color-brand: #0f1f15;     
-            --color-accent: #16a34a;    
-            --color-muted: #475569;     
+            --bg-canvas: #f8fafc;
+            --bg-card: #ffffff;
+            --border-soft: #e2e8f0;
+            --color-brand: #0f1f15;
+            --color-accent: #16a34a;        /* декоративний акцент */
+            --color-accent-text: #15803d;   /* акцент для тексту (контраст WCAG AA) */
+            --color-muted: #475569;
             --gradient-subtle: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
         }
 
@@ -28,19 +49,20 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
             -webkit-font-smoothing: antialiased;
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
+        html { -webkit-text-size-adjust: 100%; }
 
         @media (prefers-reduced-motion: no-preference) {
-            html {
-                scroll-behavior: smooth;
+            html { scroll-behavior: smooth; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
             }
         }
 
@@ -50,17 +72,33 @@
             line-height: 1.6;
             padding-bottom: env(safe-area-inset-bottom);
             position: relative;
-            scroll-behavior: smooth;
         }
 
         h1, h2, h3, .logo-text, .metric {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
             color: var(--color-brand);
         }
 
-        section[id] {
-            scroll-margin-top: 100px;
+        section[id] { scroll-margin-top: 100px; }
+
+        :focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 3px;
+            border-radius: 6px;
         }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 8px;
+            background: var(--color-brand);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            z-index: 200;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 16px; }
 
         .container {
             max-width: 1200px;
@@ -71,6 +109,7 @@
             position: relative;
         }
 
+        /* ---------- Header ---------- */
         header {
             background: rgba(248, 250, 252, 0.85);
             backdrop-filter: blur(20px);
@@ -85,17 +124,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 24px;
+            gap: 16px;
+            padding: 16px 24px;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: max(24px, env(safe-area-inset-left));
             padding-right: max(24px, env(safe-area-inset-right));
         }
 
-        .logo-link {
-            text-decoration: none;
-            display: inline-block;
-        }
+        .logo-link { text-decoration: none; display: inline-block; }
 
         .logo-text {
             font-size: 1.4rem;
@@ -103,31 +140,21 @@
             letter-spacing: 1.5px;
             transition: opacity 0.2s;
         }
+        .logo-link:hover .logo-text { opacity: 0.85; }
+        .logo-text span { color: var(--color-accent-text); }
 
-        .logo-link:hover .logo-text {
-            opacity: 0.85;
-        }
+        nav#site-nav { display: flex; gap: 32px; }
 
-        .logo-text span {
-            color: var(--color-accent);
-        }
-
-        nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        nav a {
+        nav#site-nav a {
             text-decoration: none;
             color: var(--color-muted);
             font-weight: 500;
             font-size: 0.92rem;
             transition: color 0.2s;
         }
+        nav#site-nav a:hover { color: var(--color-brand); }
 
-        nav a:hover {
-            color: var(--color-brand);
-        }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
 
         .cta-inline {
             background: var(--color-brand);
@@ -138,15 +165,39 @@
             font-size: 0.88rem;
             text-decoration: none;
             transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .cta-inline:hover { background: var(--color-accent-text); transform: translateY(-1px); }
+
+        .nav-phone {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-brand);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
 
-        .cta-inline:hover {
-            background: var(--color-accent);
-            transform: translateY(-1px);
+        .nav-phone svg { flex-shrink: 0; }
+
+        .burger {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--color-brand);
         }
 
+        /* ---------- Hero ---------- */
         .hero-section {
-            padding: clamp(50px, 10vw, 90px) 0 60px;
+            padding: clamp(48px, 9vw, 86px) 0 56px;
             text-align: center;
         }
 
@@ -162,6 +213,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
+            color: var(--color-brand);
             margin-bottom: 28px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
@@ -175,7 +227,7 @@
         }
 
         h1 {
-            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            font-size: clamp(2.1rem, 5.6vw, 3.6rem);
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -1.5px;
@@ -185,17 +237,46 @@
 
         h1 span {
             background: linear-gradient(to right, var(--color-brand), var(--color-accent));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: var(--color-accent-text);
         }
 
-        .hero-section p {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-            font-weight: 400;
+        .hero-section > p {
+            max-width: 720px;
+            margin: 0 auto 32px;
+            font-size: clamp(1.05rem, 2.5vw, 1.2rem);
         }
 
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ---------- Trust bar ---------- */
+        .trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 28px;
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px dashed var(--border-soft);
+        }
+        .trust-bar span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trust-bar svg { color: var(--color-accent-text); flex-shrink: 0; }
+
+        /* ---------- Bento ---------- */
         .bento-container {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -219,7 +300,7 @@
         .bento-card:hover {
             transform: translateY(-4px);
             border-color: rgba(22, 165, 74, 0.25);
-            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.05);
         }
 
         .w-2 { grid-column: span 2; }
@@ -229,7 +310,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 28px;
         }
 
         .card-label {
@@ -237,15 +319,16 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-accent);
+            color: var(--color-accent-text);
             background: #f0fdf4;
             padding: 4px 12px;
             border-radius: 6px;
         }
 
         .card-icon {
-            font-size: 1.4rem;
-            opacity: 0.9;
+            color: var(--color-accent-text);
+            display: inline-flex;
+            flex-shrink: 0;
         }
 
         .bento-card h2.intro-title {
@@ -263,25 +346,34 @@
             letter-spacing: -0.5px;
         }
 
-        .bento-card p {
-            font-size: 0.95rem;
-            color: var(--color-muted);
+        .bento-card p { font-size: 0.95rem; color: var(--color-muted); }
+
+        .card-list {
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.88rem;
+        }
+        .card-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 4px;
+        }
+        .card-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
         }
 
-        .bento-card.service-card {
-            background: var(--gradient-subtle);
-        }
-        .service-wrapper {
-            max-width: 750px;
-        }
-        .service-title {
-            font-size: 1.4rem;
-        }
-        .service-text {
-            font-size: 1rem;
-            margin-top: 8px;
-            color: var(--color-muted);
-        }
+        .bento-card.service-card { background: var(--gradient-subtle); }
+        .service-wrapper { max-width: 750px; }
+        .service-title { font-size: 1.4rem; }
+        .service-text { font-size: 1rem; margin-top: 8px; color: var(--color-muted); }
 
         .intro-block {
             display: flex;
@@ -289,24 +381,26 @@
             align-items: center;
             text-align: left;
         }
-
-        .intro-block p {
-            flex: 1.4;
-            font-size: 1.05rem;
-            line-height: 1.65;
-        }
+        .intro-block > div { flex: 1.4; }
+        .intro-block p { font-size: 1.05rem; line-height: 1.65; }
+        .intro-block p + p { margin-top: 14px; }
 
         .section-header {
             text-align: center;
             margin: clamp(50px, 8vw, 80px) 0 40px;
         }
-
         .section-header h2 {
             font-size: clamp(1.6rem, 4vw, 2rem);
             font-weight: 800;
             letter-spacing: -0.5px;
         }
+        .section-header p {
+            max-width: 640px;
+            margin: 12px auto 0;
+            font-size: 1rem;
+        }
 
+        /* ---------- Metrics ---------- */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -321,68 +415,93 @@
             text-align: center;
             transition: border-color 0.3s;
         }
+        .metric-item:hover { border-color: var(--color-brand); }
+        .metric-item .metric { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+        .metric-item span { font-size: 0.9rem; color: var(--color-muted); }
 
-        .metric-item:hover {
-            border-color: var(--color-brand);
+        /* ---------- FAQ ---------- */
+        .faq-list {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .metric-item .metric {
-            font-size: 1.3rem;
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 18px;
+            padding: 4px 24px;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 20px 0;
             font-weight: 700;
-            margin-bottom: 6px;
+            color: var(--color-brand);
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
         }
-
-        .metric-item span {
-            font-size: 0.9rem;
-            color: var(--color-muted);
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-accent-text);
+            flex-shrink: 0;
+            line-height: 1;
         }
+        .faq-item[open] summary::after { content: "–"; }
+        .faq-item p { padding-bottom: 20px; font-size: 0.97rem; }
 
-        .contact-section {
-            margin-top: clamp(50px, 8vw, 80px);
+        /* ---------- Contact ---------- */
+        .contact-section { margin-top: clamp(50px, 8vw, 80px); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 20px;
+            align-items: stretch;
         }
 
         .info-pane {
             background: var(--color-brand);
             color: #ffffff;
-            padding: clamp(35px, 5vw, 60px) clamp(25px, 4vw, 45px);
+            padding: clamp(32px, 4vw, 48px) clamp(24px, 3.5vw, 40px);
             border-radius: 28px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 32px;
         }
 
-        .info-pane h3 {
+        .info-pane h2 {
             color: #ffffff;
-            font-size: 2rem;
+            font-size: clamp(1.7rem, 4vw, 2rem);
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             letter-spacing: -1px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 30px;
-        }
+        .info-grid { display: grid; gap: 24px; }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
+        .info-item { display: flex; align-items: flex-start; gap: 16px; }
 
         .info-pane .icon {
-            font-size: 1.3rem;
             background: rgba(255,255,255,0.08);
-            padding: 8px 12px;
+            padding: 10px;
             border-radius: 12px;
-            line-height: 1;
+            line-height: 0;
             flex-shrink: 0;
+            color: #ffffff;
         }
 
         .info-pane .text-caption {
             font-size: 0.8rem;
-            color: #94a3b8;
+            color: #cbd5e1;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-weight: 600;
@@ -393,31 +512,83 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             display: inline-block;
             transition: color 0.2s;
         }
+        .info-pane a:hover { color: #4ade80; }
+        .info-pane p { color: #e2e8f0; font-size: 1.02rem; font-weight: 500; line-height: 1.5; }
 
-        .info-pane a:hover {
-            color: var(--color-accent);
+        .messengers { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+        .messenger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem !important;
+            font-weight: 600;
+            transition: background 0.2s;
         }
-
-        .info-pane p {
-            color: #e2e8f0;
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
+        .messenger-btn:hover { background: rgba(255,255,255,0.16); color: #fff !important; }
 
         .corporate-tag {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #cbd5e1;
             background: rgba(255,255,255,0.04);
             padding: 16px 24px;
             border-radius: 14px;
             line-height: 1.5;
-            max-width: 100%;
             border-left: 3px solid var(--color-accent);
+            margin-top: auto;
+        }
+
+        /* ---------- Form ---------- */
+        .form-pane {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 28px;
+            padding: clamp(32px, 4vw, 48px) clamp(24px, 3.5vw, 40px);
+        }
+        .form-pane h2 {
+            font-size: clamp(1.4rem, 3.4vw, 1.7rem);
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            margin-bottom: 8px;
+        }
+        .form-pane > p { font-size: 0.95rem; margin-bottom: 24px; }
+
+        .field { margin-bottom: 16px; }
+        .field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--color-brand);
+            margin-bottom: 6px;
+        }
+        .field input, .field textarea, .field select {
+            width: 100%;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 13px 16px;
+            font-size: 0.95rem;
+            color: var(--color-brand);
+            background: var(--bg-canvas);
+            transition: border-color 0.2s;
+        }
+        .field input:focus, .field textarea:focus, .field select:focus {
+            border-color: var(--color-accent);
+            background: #fff;
+        }
+        .field textarea { min-height: 96px; resize: vertical; }
+
+        .form-consent {
+            font-size: 0.78rem;
+            color: #64748b;
+            margin-top: 14px;
+            line-height: 1.5;
         }
 
         .btn-primary {
@@ -427,20 +598,37 @@
             gap: 12px;
             background: var(--color-brand);
             color: #ffffff;
-            padding: 16px 42px;
+            padding: 16px 36px;
+            border: none;
             border-radius: 14px;
             font-weight: 600;
             text-decoration: none;
             font-size: 1rem;
+            cursor: pointer;
             box-shadow: 0 8px 24px rgba(15, 31, 21, 0.12);
             transition: all 0.25s;
-            align-self: flex-start;
         }
-        .btn-primary:hover {
-            background: #162d1e;
-            transform: translateY(-1px);
-        }
+        .btn-primary:hover { background: #162d1e; transform: translateY(-1px); }
+        .btn-primary.full { width: 100%; margin-top: 8px; }
 
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--bg-card);
+            color: var(--color-brand);
+            border: 1px solid var(--border-soft);
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.25s;
+        }
+        .btn-secondary:hover { border-color: var(--color-brand); transform: translateY(-1px); }
+
+        /* ---------- Footer ---------- */
         footer {
             margin: clamp(50px, 8vw, 90px) 0 40px;
             padding-top: 30px;
@@ -448,26 +636,68 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
             font-size: 0.88rem;
-            color: #64748b;
+            color: #5b6b7f;
         }
+        footer a { color: #5b6b7f; }
 
+        /* ---------- Responsive ---------- */
         @media (max-width: 1024px) {
             .bento-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .w-2 { grid-column: span 1; }
             .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .intro-block { flex-direction: column; text-align: center; gap: 20px; }
-            .info-grid { grid-template-columns: 1fr; gap: 24px; }
+            .intro-block { flex-direction: column; text-align: left; gap: 20px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 860px) {
+            nav#site-nav {
+                position: fixed;
+                inset: 68px 0 auto 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--bg-card);
+                border-bottom: 1px solid var(--border-soft);
+                padding: 8px 24px 20px;
+                box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+                display: none;
+            }
+            nav#site-nav.open { display: flex; }
+            nav#site-nav a {
+                padding: 15px 0;
+                border-bottom: 1px solid var(--border-soft);
+                font-size: 1rem;
+            }
+            nav#site-nav a:last-child { border-bottom: none; }
+            .burger { display: inline-flex; }
+            .cta-inline { display: none; }
+            .nav-phone { display: inline-flex; }
+        }
+
+        /* На вузьких екранах номер згортається до іконки, щоб шапка не переповнювалась */
+        @media (max-width: 560px) {
+            .nav-phone {
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border: 1px solid var(--border-soft);
+                background: var(--bg-card);
+                border-radius: 12px;
+            }
+            .nav-phone .nav-phone-text { display: none; }
+            .logo-text { font-size: 1.2rem; letter-spacing: 1px; }
         }
 
         @media (max-width: 768px) {
-            .nav-wrapper { padding: 16px 20px; }
+            .nav-wrapper { padding: 14px 20px; }
             .bento-container { grid-template-columns: repeat(1, minmax(0, 1fr)); }
             .w-3 { grid-column: span 1; }
             .metrics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-            nav { display: none; }
-            footer { flex-direction: column; gap: 15px; text-align: center; }
-            .btn-primary { width: 100%; }
+            footer { flex-direction: column; text-align: center; }
+            .btn-primary, .btn-secondary { width: 100%; }
+            .hero-actions { flex-direction: column; }
             .service-wrapper { max-width: 100%; }
         }
     </style>
@@ -475,105 +705,158 @@
 
 <body id="top">
 
+    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
     <header>
         <div class="nav-wrapper">
-            <a href="#top" class="logo-link" aria-label="AGRAVIKA - На початок сторінки">
+            <a href="#top" class="logo-link" aria-label="AGRAVIKA — на початок сторінки">
                 <div class="logo-text">AGRAVIKA<span>.</span></div>
             </a>
-            <nav aria-label="Головна навігація сайту">
+
+            <nav id="site-nav" aria-label="Головна навігація сайту">
                 <a href="#about">Про нас</a>
-                <a href="#solutions">Рішення</a>
+                <a href="#solutions">Продукція</a>
                 <a href="#advantages">Переваги</a>
+                <a href="#faq">Питання</a>
                 <a href="#contact">Контакти</a>
             </nav>
-            <a class="cta-inline" href="#contact">Контакти</a>
+
+            <div class="nav-actions">
+                <a class="nav-phone" href="tel:+380676734353" aria-label="Зателефонувати: +38 067 673 43 53"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-text">+38 (067) 673-43-53</span></a>
+                <a class="cta-inline" href="#contact">Отримати прорахунок</a>
+                <button class="burger" type="button" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="site-nav">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        
+    <main class="container" id="main">
+
         <section class="hero-section">
             <div class="badge-status">
                 <div class="live-dot" aria-hidden="true"></div> Новий рівень конверсії кормів
             </div>
-            <h1>Технологічні компоненти для <span>професійного тваринництва.</span></h1>
-            <p>Науково обґрунтовані добавки, системи органічного захисту та фітобіотики, розроблені для підвищення рентабельності сучасних агрокомплексів.</p>
-            <a class="btn-primary" href="#contact">Зв'язатися з компанією →</a>
+            <h1>Кормові добавки, премікси та фітобіотики для <span>промислового тваринництва</span></h1>
+            <p>АГРАВІКА постачає органічні кислоти, фітобіотики, премікси та функціональні інгредієнти, а також проводить аудит і розрахунок раціонів для комбікормових заводів і тваринницьких комплексів України.</p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="#contact">Отримати прорахунок раціону</a>
+                <a class="btn-secondary" href="tel:+380676734353">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +38 (067) 673-43-53
+                </a>
+            </div>
+
+            <div class="trust-bar">
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Сертифікація GMP+ / FAMI-QS</span>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Повний пакет супровідних документів</span>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Доставка по всій Україні</span>
+            </div>
         </section>
 
         <section id="about" class="bento-card w-3">
             <div class="intro-block">
-                <h2 class="intro-title">Ваш технологічний партнер у створенні раціонів.</h2>
-                <p>Компанія <strong>АГРАВІКА</strong> спеціалізується на інтеграції передових світових рішень у сфері годівлі. Ми допомагаємо виробникам комбікормів та великим тваринницьким комплексам автоматизувати захист здоров'я тварин та забезпечити максимальний коефіцієнт засвоєння поживних речовин.</p>
+                <h2 class="intro-title">Ваш технологічний партнер у створенні раціонів</h2>
+                <div>
+                    <p>Компанія <strong>АГРАВІКА</strong> спеціалізується на інтеграції передових світових рішень у сфері годівлі сільськогосподарських тварин. Ми допомагаємо виробникам комбікормів та тваринницьким комплексам захистити здоров'я поголів'я та забезпечити максимальний коефіцієнт засвоєння поживних речовин.</p>
+                    <p>Працюємо з птахівництвом, свинарством та великою рогатою худобою: підбираємо компоненти під конкретне завдання, рахуємо економіку введення та супроводжуємо впровадження на виробництві.</p>
+                </div>
             </div>
         </section>
 
         <section id="solutions">
+            <div class="section-header">
+                <h2>Продукція та рішення</h2>
+                <p>П'ять напрямів компонентів для годівлі — від контролю патогенів до індивідуальних преміксів.</p>
+            </div>
             <div class="bento-container">
-                
+
                 <div class="bento-card">
                     <div class="card-top">
-                        <span class="card-label">Здоров'я ЗКТ</span>
-                        <span class="card-icon" role="img" aria-label="Пробірка">🧪</span>
+                        <span class="card-label">Здоров'я ШКТ</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.5L4.6 16.4A3 3 0 0 0 7.2 21h9.6a3 3 0 0 0 2.6-4.6L15 8.5V2"/><path d="M7.5 2h9"/><path d="M6 15h12"/></svg></span>
                     </div>
                     <div>
                         <h3>Органічні кислоти</h3>
-                        <p>Контроль патогенної флори, оптимізація рівня pH травного тракту та надійне знезараження сировини.</p>
+                        <p>Контроль патогенної флори, оптимізація pH травного тракту та знезараження сировини і готового корму.</p>
+                        <ul class="card-list">
+                            <li>Підкислювачі води та корму</li>
+                            <li>Консерванти сировини</li>
+                            <li>Захист від сальмонели та E. coli</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Біостимуляція</span>
-                        <span class="card-icon" role="img" aria-label="Паросток">🌱</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 14c0-4 3.5-6.5 8-6.5 0 4-3.5 6.5-8 6.5z"/></svg></span>
                     </div>
                     <div>
                         <h3>Фітобіотики</h3>
-                        <p>Природна та безпечна заміна хімічних стимуляторів на основі високоактивних екстрактів цільових рослин.</p>
+                        <p>Природна заміна хімічних стимуляторів росту на основі високоактивних екстрактів цільових рослин.</p>
+                        <ul class="card-list">
+                            <li>Ефірні олії та рослинні екстракти</li>
+                            <li>Альтернатива кормовим антибіотикам</li>
+                            <li>Підтримка імунітету поголів'я</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Ефективність</span>
-                        <span class="card-icon" role="img" aria-label="Блискавка">⚡</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
                     </div>
                     <div>
                         <h3>Кормові добавки</h3>
-                        <p>Рішення для інтенсифікації обмінних процесів та суттєвого зниження загальних витрат корму на одиницю приросту.</p>
+                        <p>Рішення для інтенсифікації обмінних процесів і зниження витрат корму на одиницю приросту.</p>
+                        <ul class="card-list">
+                            <li>Ферменти та емульгатори</li>
+                            <li>Адсорбенти мікотоксинів</li>
+                            <li>Покращення показника FCR</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bento-card w-2">
                     <div class="card-top">
-                        <span class="card-label">Біо-Інжиніринг</span>
-                        <span class="card-icon" role="img" aria-label="Мікроскоп">🔬</span>
+                        <span class="card-label">Біо-інжиніринг</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
                     </div>
                     <div>
                         <h3>Функціональні інгредієнти</h3>
-                        <p>Спеціалізовані мікрокомпоненти, що дозволяють створювати збалансовані премікс-корми нового покоління за оптимізованою собівартістю.</p>
+                        <p>Спеціалізовані мікрокомпоненти, що дозволяють створювати збалансовані премікс-корми нового покоління за оптимізованою собівартістю. Підбираємо компоненти під наявну рецептуру, щоб не переробляти весь раціон з нуля.</p>
+                        <ul class="card-list">
+                            <li>Носії та наповнювачі для преміксів</li>
+                            <li>Оптимізація собівартості готового корму</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
                         <span class="card-label">Точність</span>
-                        <span class="card-icon" role="img" aria-label="ДНК">🧬</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2c0 6 16 6 16 12"/><path d="M20 2c0 6-16 6-16 12"/><path d="M4 22c0-2.5 3-4 8-4s8 1.5 8 4"/><path d="M7 6h10"/><path d="M8.5 10h7"/></svg></span>
                     </div>
                     <div>
                         <h3>Премікси</h3>
                         <p>Індивідуальні мікроінгредієнтні комплекси з високою біодоступністю під фізіологічні фази росту.</p>
+                        <ul class="card-list">
+                            <li>Рецептура під ваше поголів'я</li>
+                            <li>Вітамінно-мінеральні комплекси</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="bento-card w-3 service-card">
                     <div class="card-top">
                         <span class="card-label" style="background: var(--color-brand); color: #fff;">Сервіс</span>
-                        <span class="card-icon" role="img" aria-label="Графік вгору">📈</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 15 4-5 3 3 5-7"/></svg></span>
                     </div>
                     <div class="service-wrapper">
-                        <h3 class="service-title">Технічний аудит та оптимізація matrix-структур годівлі</h3>
-                        <p class="service-text">Ми пропонуємо не просто окремі продукти, а повний комплекс аналітики. Наші фахівці проводять розрахунки та коригування діючих раціонів для досягнення максимальних економічних показників вашого підприємства.</p>
+                        <h3 class="service-title">Технічний аудит і оптимізація структури годівлі</h3>
+                        <p class="service-text">Ми пропонуємо не просто окремі продукти, а повний комплекс аналітики. Наші фахівці аналізують діючі раціони, рахують економіку введення кожного компонента та коригують рецептури для досягнення максимальних економічних показників вашого підприємства.</p>
                     </div>
                 </div>
 
@@ -587,15 +870,15 @@
             <div class="metrics-grid">
                 <div class="metric-item">
                     <div class="metric">Сертифікація</div>
-                    <span>Компоненти від лідерів з сертифікацією GMP+ / FAMI-QS</span>
+                    <span>Компоненти від виробників із сертифікацією GMP+ / FAMI-QS</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Експертиза</div>
-                    <span>Глибокі практичні знання та розрахунок раціонів</span>
+                    <span>Практичні знання технології годівлі та розрахунок раціонів</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Контроль</div>
-                    <span>Повний супровід від аналізу matrix-структур до впровадження</span>
+                    <span>Повний супровід від аналізу рецептури до впровадження</span>
                 </div>
                 <div class="metric-item">
                     <div class="metric">Окупність</div>
@@ -604,50 +887,237 @@
             </div>
         </section>
 
+        <section id="faq">
+            <div class="section-header">
+                <h2>Часті запитання</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Яку продукцію постачає АГРАВІКА?</summary>
+                    <p>Органічні кислоти та підкислювачі, фітобіотики, кормові добавки, функціональні інгредієнти та премікси для птахівництва, свинарства й великої рогатої худоби. Підбір відбувається під конкретну рецептуру та фазу годівлі.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Чи можна отримати розрахунок економічного ефекту перед закупівлею?</summary>
+                    <p>Так. Ми аналізуємо вашу діючу рецептуру, показники продуктивності та вартість раціону, після чого надаємо розрахунок очікуваного ефекту від введення компонента. Для початку достатньо надіслати рецептуру через форму на сайті або на пошту info@agravika.com.ua.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Які документи надаються разом із продукцією?</summary>
+                    <p>Повний пакет супровідних документів на партію: сертифікати відповідності та якості виробника, декларації, документи щодо реєстрації кормових добавок в Україні. Усі договірні зобов'язання та поставки супроводжуються ТОВ «АГРАВІКА».</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Чи є доставка в регіони?</summary>
+                    <p>Так, ми працюємо з підприємствами по всій Україні. Умови та строки доставки узгоджуються індивідуально залежно від обсягу партії та регіону.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Як швидко можна отримати комерційну пропозицію?</summary>
+                    <p>Залиште заявку у формі нижче або зателефонуйте за номером +38 (067) 673-43-53 — ми зв'яжемося з вами протягом робочого дня та уточнимо технічне завдання.</p>
+                </details>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
-            <div class="info-pane">
-                <div>
-                    <h3>Контакти</h3>
-                    
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="icon" role="img" aria-label="Телефон">📞</span>
-                            <div>
-                                <div class="text-caption">Телефон головного офісу</div>
-                                <a href="tel:+380676734353">+38 (067) 673-43-53</a>
+            <div class="contact-grid">
+
+                <div class="info-pane">
+                    <div>
+                        <h2>Контакти</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                                <div>
+                                    <div class="text-caption">Телефон головного офісу</div>
+                                    <a href="tel:+380676734353">+38 (067) 673-43-53</a>
+                                    <div class="messengers">
+                                        <a class="messenger-btn" href="viber://chat?number=%2B380676734353">Viber</a>
+                                        <!-- TODO: замінити на реальний username компанії в Telegram, напр. https://t.me/agravika -->
+                                        <a class="messenger-btn" href="https://t.me/+380676734353" rel="noopener">Telegram</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <span class="icon" role="img" aria-label="Пошта">✉</span>
-                            <div>
-                                <div class="text-caption">Електронна пошта</div>
-                                <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
+
+                            <div class="info-item">
+                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+                                <div>
+                                    <div class="text-caption">Електронна пошта</div>
+                                    <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <span class="icon" role="img" aria-label="Маркер мапи">📍</span>
-                            <div>
-                                <div class="text-caption">Юридична адреса</div>
-                                <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
+
+                            <div class="info-item">
+                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                                <div>
+                                    <div class="text-caption">Юридична адреса</div>
+                                    <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                                <div>
+                                    <div class="text-caption">Графік роботи</div>
+                                    <!-- TODO: підставити реальний графік роботи компанії -->
+                                    <p>Пн–Пт, 09:00–18:00</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="corporate-tag">
+                        <strong>Офіційний суб'єкт:</strong> усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
+                    </div>
                 </div>
-                
-                <div class="corporate-tag">
-                    <strong>Офіційний суб'єкт:</strong> Усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
+
+                <div class="form-pane">
+                    <h2>Залишити заявку</h2>
+                    <p>Опишіть завдання — ми підготуємо прорахунок і комерційну пропозицію протягом робочого дня.</p>
+
+                    <!--
+                        TODO: форма налаштована під безкоштовний сервіс Web3Forms (працює на статичному GitHub Pages).
+                        1) Зареєструйтеся на https://web3forms.com і отримайте access key на пошту info@agravika.com.ua
+                        2) Вставте його у value поля access_key нижче.
+                        Альтернативи: Formspree, Getform, Google Forms.
+                    -->
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="ВСТАВТЕ-ВАШ-ACCESS-KEY">
+                        <input type="hidden" name="subject" value="Нова заявка з сайту agravika.com.ua">
+                        <input type="hidden" name="from_name" value="Сайт AGRAVIKA">
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div class="field">
+                            <label for="name">Ім'я та компанія</label>
+                            <input id="name" name="name" type="text" required autocomplete="organization" placeholder="Іван Мельник, ТОВ «Агрофірма»">
+                        </div>
+                        <div class="field">
+                            <label for="phone">Телефон</label>
+                            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __">
+                        </div>
+                        <div class="field">
+                            <label for="direction">Напрям</label>
+                            <select id="direction" name="direction">
+                                <option>Птахівництво</option>
+                                <option>Свинарство</option>
+                                <option>ВРХ</option>
+                                <option>Комбікормове виробництво</option>
+                                <option>Інше</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="message">Завдання</label>
+                            <textarea id="message" name="message" placeholder="Наприклад: потрібен підкислювач для бройлера, поголів'я 200 тис."></textarea>
+                        </div>
+
+                        <button class="btn-primary full" type="submit">Надіслати заявку</button>
+                        <p class="form-consent">Надсилаючи форму, ви погоджуєтесь на обробку наданих контактних даних для зворотного зв'язку.</p>
+                    </form>
                 </div>
+
             </div>
         </section>
 
         <footer>
             <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
+            <!-- TODO: додати код ЄДРПОУ — це помітно підвищує довіру B2B-клієнтів -->
             <div>Офіційний цифровий домен: <strong>agravika.com.ua</strong></div>
         </footer>
 
     </main>
+
+    <script>
+        (function () {
+            var burger = document.getElementById('burger');
+            var nav = document.getElementById('site-nav');
+            if (!burger || !nav) return;
+
+            burger.addEventListener('click', function () {
+                var open = nav.classList.toggle('open');
+                burger.setAttribute('aria-expanded', String(open));
+                burger.setAttribute('aria-label', open ? 'Закрити меню' : 'Відкрити меню');
+            });
+
+            nav.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    nav.classList.remove('open');
+                    burger.setAttribute('aria-expanded', 'false');
+                    burger.setAttribute('aria-label', 'Відкрити меню');
+                }
+            });
+        })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://agravika.com.ua/#organization",
+          "name": "ТОВ «АГРАВІКА»",
+          "alternateName": "AGRAVIKA",
+          "url": "https://agravika.com.ua/",
+          "logo": "https://agravika.com.ua/favicon.svg",
+          "image": "https://agravika.com.ua/og-image.jpg",
+          "description": "Постачальник кормових добавок, преміксів, органічних кислот та фітобіотиків для промислового тваринництва.",
+          "email": "info@agravika.com.ua",
+          "telephone": "+380676734353",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "вул. Земельна, 1",
+            "addressLocality": "Львів",
+            "addressRegion": "Львівська область",
+            "postalCode": "79037",
+            "addressCountry": "UA"
+          },
+          "areaServed": { "@type": "Country", "name": "Україна" },
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+380676734353",
+            "contactType": "sales",
+            "email": "info@agravika.com.ua",
+            "availableLanguage": ["uk", "en"]
+          }]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://agravika.com.ua/#website",
+          "url": "https://agravika.com.ua/",
+          "name": "AGRAVIKA",
+          "inLanguage": "uk-UA",
+          "publisher": { "@id": "https://agravika.com.ua/#organization" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://agravika.com.ua/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Яку продукцію постачає АГРАВІКА?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Органічні кислоти та підкислювачі, фітобіотики, кормові добавки, функціональні інгредієнти та премікси для птахівництва, свинарства й великої рогатої худоби. Підбір відбувається під конкретну рецептуру та фазу годівлі." }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи можна отримати розрахунок економічного ефекту перед закупівлею?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Так. Ми аналізуємо діючу рецептуру, показники продуктивності та вартість раціону, після чого надаємо розрахунок очікуваного ефекту від введення компонента." }
+            },
+            {
+              "@type": "Question",
+              "name": "Які документи надаються разом із продукцією?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Повний пакет супровідних документів на партію: сертифікати відповідності та якості виробника, декларації, документи щодо реєстрації кормових добавок в Україні." }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи є доставка в регіони?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Так, ми працюємо з підприємствами по всій Україні. Умови та строки доставки узгоджуються індивідуально залежно від обсягу партії та регіону." }
+            },
+            {
+              "@type": "Question",
+              "name": "Як швидко можна отримати комерційну пропозицію?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Залиште заявку у формі на сайті або зателефонуйте за номером +38 (067) 673-43-53 — ми зв'яжемося протягом робочого дня." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
 </body>
 </html>
