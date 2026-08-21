@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <title>Кормові добавки, премікси та фітобіотики | AGRAVIKA</title>
-    <meta name="description" content="АГРАВІКА — постачальник кормових добавок, преміксів, органічних кислот і фітобіотиків для промислового тваринництва. Розрахунок раціонів, доставка по Україні.">
+    <title>Кормові добавки для тварин: адсорбенти, підкислювачі, вітаміни | AGRAVIKA</title>
+    <meta name="description" content="АГРАВІКА — добавки для годівлі сільськогосподарських тварин: адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі, кормова сечовина. Львів.">
     <link rel="canonical" href="https://agravika.com.ua/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="theme-color" content="#0f1f15">
@@ -15,13 +15,13 @@
     <meta property="og:locale" content="uk_UA">
     <meta property="og:site_name" content="AGRAVIKA">
     <meta property="og:url" content="https://agravika.com.ua/">
-    <meta property="og:title" content="Кормові добавки, премікси та фітобіотики | AGRAVIKA">
-    <meta property="og:description" content="Компоненти для промислового тваринництва: органічні кислоти, фітобіотики, премікси. Технічний аудит і розрахунок раціонів.">
+    <meta property="og:title" content="Кормові добавки для тварин: адсорбенти, підкислювачі, вітаміни | AGRAVIKA">
+    <meta property="og:description" content="Добавки для годівлі сільськогосподарських тварин: адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі, кормова сечовина.">
     <!-- TODO: завантажити у корінь репозиторію файл og-image.jpg розміром 1200×630 px -->
     <meta property="og:image" content="https://agravika.com.ua/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="AGRAVIKA — біохімічні рішення для агросектору">
+    <meta property="og:image:alt" content="AGRAVIKA — добавки для годівлі тварин">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -227,12 +227,13 @@
         }
 
         h1 {
-            font-size: clamp(2.1rem, 5.6vw, 3.6rem);
+            font-size: clamp(1.8rem, 5.6vw, 3.6rem);
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -1.5px;
             max-width: 950px;
             margin: 0 auto 24px;
+            overflow-wrap: break-word;
         }
 
         h1 span {
@@ -256,26 +257,6 @@
             flex-wrap: wrap;
         }
 
-        /* ---------- Trust bar ---------- */
-        .trust-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px 28px;
-            margin-top: 40px;
-            padding-top: 28px;
-            border-top: 1px dashed var(--border-soft);
-        }
-        .trust-bar span {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--color-muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .trust-bar svg { color: var(--color-accent-text); flex-shrink: 0; }
-
         /* ---------- Bento ---------- */
         .bento-container {
             display: grid;
@@ -284,6 +265,7 @@
             margin-top: 20px;
         }
 
+
         .bento-card {
             background: var(--bg-card);
             border: 1px solid var(--border-soft);
@@ -291,7 +273,7 @@
             padding: clamp(25px, 4vw, 40px) clamp(20px, 4vw, 35px);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
@@ -348,27 +330,6 @@
 
         .bento-card p { font-size: 0.95rem; color: var(--color-muted); }
 
-        .card-list {
-            margin: 14px 0 0;
-            padding: 0;
-            list-style: none;
-            font-size: 0.88rem;
-        }
-        .card-list li {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 4px;
-        }
-        .card-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.6em;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--color-accent);
-        }
 
         .bento-card.service-card { background: var(--gradient-subtle); }
         .service-wrapper { max-width: 750px; }
@@ -461,12 +422,6 @@
         /* ---------- Contact ---------- */
         .contact-section { margin-top: clamp(50px, 8vw, 80px); }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 20px;
-            align-items: stretch;
-        }
 
         .info-pane {
             background: var(--color-brand);
@@ -519,20 +474,6 @@
         .info-pane a:hover { color: #4ade80; }
         .info-pane p { color: #e2e8f0; font-size: 1.02rem; font-weight: 500; line-height: 1.5; }
 
-        .messengers { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
-        .messenger-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.14);
-            padding: 10px 16px;
-            border-radius: 12px;
-            font-size: 0.9rem !important;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .messenger-btn:hover { background: rgba(255,255,255,0.16); color: #fff !important; }
 
         .corporate-tag {
             font-size: 0.85rem;
@@ -545,51 +486,6 @@
             margin-top: auto;
         }
 
-        /* ---------- Form ---------- */
-        .form-pane {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 28px;
-            padding: clamp(32px, 4vw, 48px) clamp(24px, 3.5vw, 40px);
-        }
-        .form-pane h2 {
-            font-size: clamp(1.4rem, 3.4vw, 1.7rem);
-            font-weight: 800;
-            letter-spacing: -0.7px;
-            margin-bottom: 8px;
-        }
-        .form-pane > p { font-size: 0.95rem; margin-bottom: 24px; }
-
-        .field { margin-bottom: 16px; }
-        .field label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--color-brand);
-            margin-bottom: 6px;
-        }
-        .field input, .field textarea, .field select {
-            width: 100%;
-            border: 1px solid var(--border-soft);
-            border-radius: 12px;
-            padding: 13px 16px;
-            font-size: 0.95rem;
-            color: var(--color-brand);
-            background: var(--bg-canvas);
-            transition: border-color 0.2s;
-        }
-        .field input:focus, .field textarea:focus, .field select:focus {
-            border-color: var(--color-accent);
-            background: #fff;
-        }
-        .field textarea { min-height: 96px; resize: vertical; }
-
-        .form-consent {
-            font-size: 0.78rem;
-            color: #64748b;
-            margin-top: 14px;
-            line-height: 1.5;
-        }
 
         .btn-primary {
             display: inline-flex;
@@ -609,7 +505,6 @@
             transition: all 0.25s;
         }
         .btn-primary:hover { background: #162d1e; transform: translateY(-1px); }
-        .btn-primary.full { width: 100%; margin-top: 8px; }
 
         .btn-secondary {
             display: inline-flex;
@@ -649,7 +544,6 @@
             .w-2 { grid-column: span 1; }
             .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .intro-block { flex-direction: column; text-align: left; gap: 20px; }
-            .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 860px) {
@@ -690,6 +584,16 @@
             .logo-text { font-size: 1.2rem; letter-spacing: 1px; }
         }
 
+        /* Дуже вузькі екрани (320px): довге слово "сільськогосподарських" не має розпирати сторінку */
+        @media (max-width: 380px) {
+            .container {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+            .nav-wrapper { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+            h1 { font-size: 1.6rem; letter-spacing: -0.8px; }
+        }
+
         @media (max-width: 768px) {
             .nav-wrapper { padding: 14px 20px; }
             .bento-container { grid-template-columns: repeat(1, minmax(0, 1fr)); }
@@ -715,7 +619,7 @@
 
             <nav id="site-nav" aria-label="Головна навігація сайту">
                 <a href="#about">Про нас</a>
-                <a href="#solutions">Продукція</a>
+                <a href="#solutions">Напрями</a>
                 <a href="#advantages">Переваги</a>
                 <a href="#faq">Питання</a>
                 <a href="#contact">Контакти</a>
@@ -723,7 +627,7 @@
 
             <div class="nav-actions">
                 <a class="nav-phone" href="tel:+380676734353" aria-label="Зателефонувати: +38 067 673 43 53"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-text">+38 (067) 673-43-53</span></a>
-                <a class="cta-inline" href="#contact">Отримати прорахунок</a>
+                <a class="cta-inline" href="#contact">Контакти</a>
                 <button class="burger" type="button" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="site-nav">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                 </button>
@@ -735,41 +639,46 @@
 
         <section class="hero-section">
             <div class="badge-status">
-                <div class="live-dot" aria-hidden="true"></div> Новий рівень конверсії кормів
+                <div class="live-dot" aria-hidden="true"></div> Компоненти для годівлі
             </div>
-            <h1>Кормові добавки, премікси та фітобіотики для <span>промислового тваринництва</span></h1>
-            <p>АГРАВІКА постачає органічні кислоти, фітобіотики, премікси та функціональні інгредієнти, а також проводить аудит і розрахунок раціонів для комбікормових заводів і тваринницьких комплексів України.</p>
+            <h1>Добавки для годівлі <span>сільськогосподарських тварин</span></h1>
+            <p>АГРАВІКА працює на ринку кормових компонентів: адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі та кормова сечовина для тваринницьких господарств і виробників комбікормів.</p>
             <div class="hero-actions">
-                <a class="btn-primary" href="#contact">Отримати прорахунок раціону</a>
+                <a class="btn-primary" href="#contact">Зв'язатися з компанією</a>
                 <a class="btn-secondary" href="tel:+380676734353">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     +38 (067) 673-43-53
                 </a>
             </div>
-
-            <div class="trust-bar">
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Сертифікація GMP+ / FAMI-QS</span>
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Повний пакет супровідних документів</span>
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Доставка по всій Україні</span>
-            </div>
         </section>
 
         <section id="about" class="bento-card w-3">
             <div class="intro-block">
-                <h2 class="intro-title">Ваш технологічний партнер у створенні раціонів</h2>
+                <h2 class="intro-title">Про компанію</h2>
                 <div>
-                    <p>Компанія <strong>АГРАВІКА</strong> спеціалізується на інтеграції передових світових рішень у сфері годівлі сільськогосподарських тварин. Ми допомагаємо виробникам комбікормів та тваринницьким комплексам захистити здоров'я поголів'я та забезпечити максимальний коефіцієнт засвоєння поживних речовин.</p>
-                    <p>Працюємо з птахівництвом, свинарством та великою рогатою худобою: підбираємо компоненти під конкретне завдання, рахуємо економіку введення та супроводжуємо впровадження на виробництві.</p>
+                    <p>Компанія <strong>АГРАВІКА</strong> займається постачанням кормових добавок та компонентів для годівлі сільськогосподарських тварин. Ми працюємо з тваринницькими господарствами та виробниками комбікормів, підбираючи компоненти під конкретну задачу в раціоні.</p>
+                    <p>Асортимент формується навколо базових груп добавок, які найчастіше потрібні у щоденній роботі господарства, — від контролю якості сировини до покриття потреби поголів'я у мікронутрієнтах.</p>
                 </div>
             </div>
         </section>
 
         <section id="solutions">
             <div class="section-header">
-                <h2>Продукція та рішення</h2>
-                <p>П'ять напрямів компонентів для годівлі — від контролю патогенів до індивідуальних преміксів.</p>
+                <h2>Напрями роботи</h2>
+                <p>Базові групи кормових добавок, з якими працює компанія.</p>
             </div>
             <div class="bento-container">
+
+                <div class="bento-card">
+                    <div class="card-top">
+                        <span class="card-label">Якість корму</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></span>
+                    </div>
+                    <div>
+                        <h3>Адсорбенти мікотоксинів</h3>
+                        <p>Зв'язують мікотоксини у кормі та обмежують їх всмоктування в травному тракті. Застосовуються, коли є ризик ураження сировини пліснявими грибами.</p>
+                    </div>
+                </div>
 
                 <div class="bento-card">
                     <div class="card-top">
@@ -777,86 +686,52 @@
                         <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.5L4.6 16.4A3 3 0 0 0 7.2 21h9.6a3 3 0 0 0 2.6-4.6L15 8.5V2"/><path d="M7.5 2h9"/><path d="M6 15h12"/></svg></span>
                     </div>
                     <div>
-                        <h3>Органічні кислоти</h3>
-                        <p>Контроль патогенної флори, оптимізація pH травного тракту та знезараження сировини і готового корму.</p>
-                        <ul class="card-list">
-                            <li>Підкислювачі води та корму</li>
-                            <li>Консерванти сировини</li>
-                            <li>Захист від сальмонели та E. coli</li>
-                        </ul>
+                        <h3>Підкислювачі</h3>
+                        <p>Органічні кислоти та їх солі. Знижують pH корму й травного тракту, стримують розвиток небажаної мікрофлори, використовуються також для консервування сировини.</p>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
-                        <span class="card-label">Біостимуляція</span>
-                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 14c0-4 3.5-6.5 8-6.5 0 4-3.5 6.5-8 6.5z"/></svg></span>
+                        <span class="card-label">Мікронутрієнти</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a4.95 4.95 0 0 1-7-7l7-7a4.95 4.95 0 0 1 7 7z"/><path d="m8.5 8.5 7 7"/></svg></span>
                     </div>
                     <div>
-                        <h3>Фітобіотики</h3>
-                        <p>Природна заміна хімічних стимуляторів росту на основі високоактивних екстрактів цільових рослин.</p>
-                        <ul class="card-list">
-                            <li>Ефірні олії та рослинні екстракти</li>
-                            <li>Альтернатива кормовим антибіотикам</li>
-                            <li>Підтримка імунітету поголів'я</li>
-                        </ul>
+                        <h3>Вітаміни</h3>
+                        <p>Вітамінні препарати для введення в раціон і компенсації дефіциту мікронутрієнтів на різних фазах вирощування.</p>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
-                        <span class="card-label">Ефективність</span>
-                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
+                        <span class="card-label">Поживність</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9.5" cy="10" r="1.6"/><circle cx="14.5" cy="14" r="1.6"/><circle cx="14.8" cy="9.2" r="1"/></svg></span>
                     </div>
                     <div>
-                        <h3>Кормові добавки</h3>
-                        <p>Рішення для інтенсифікації обмінних процесів і зниження витрат корму на одиницю приросту.</p>
-                        <ul class="card-list">
-                            <li>Ферменти та емульгатори</li>
-                            <li>Адсорбенти мікотоксинів</li>
-                            <li>Покращення показника FCR</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bento-card w-2">
-                    <div class="card-top">
-                        <span class="card-label">Біо-інжиніринг</span>
-                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
-                    </div>
-                    <div>
-                        <h3>Функціональні інгредієнти</h3>
-                        <p>Спеціалізовані мікрокомпоненти, що дозволяють створювати збалансовані премікс-корми нового покоління за оптимізованою собівартістю. Підбираємо компоненти під наявну рецептуру, щоб не переробляти весь раціон з нуля.</p>
-                        <ul class="card-list">
-                            <li>Носії та наповнювачі для преміксів</li>
-                            <li>Оптимізація собівартості готового корму</li>
-                        </ul>
+                        <h3>Кормові дріжджі</h3>
+                        <p>Джерело білка, амінокислот і вітамінів групи B. Використовуються для підвищення поживності раціону та підтримки мікрофлори травного тракту.</p>
                     </div>
                 </div>
 
                 <div class="bento-card">
                     <div class="card-top">
-                        <span class="card-label">Точність</span>
+                        <span class="card-label">Протеїн</span>
                         <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2c0 6 16 6 16 12"/><path d="M20 2c0 6-16 6-16 12"/><path d="M4 22c0-2.5 3-4 8-4s8 1.5 8 4"/><path d="M7 6h10"/><path d="M8.5 10h7"/></svg></span>
                     </div>
                     <div>
-                        <h3>Премікси</h3>
-                        <p>Індивідуальні мікроінгредієнтні комплекси з високою біодоступністю під фізіологічні фази росту.</p>
-                        <ul class="card-list">
-                            <li>Рецептура під ваше поголів'я</li>
-                            <li>Вітамінно-мінеральні комплекси</li>
-                        </ul>
+                        <h3>Кормова сечовина</h3>
+                        <p>Карбамід як джерело небілкового азоту для жуйних тварин. Дозволяє частково замінити протеїнові компоненти раціону.</p>
                     </div>
                 </div>
 
-                <div class="bento-card w-3 service-card">
+                <div class="bento-card service-card">
                     <div class="card-top">
-                        <span class="card-label" style="background: var(--color-brand); color: #fff;">Сервіс</span>
-                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 15 4-5 3 3 5-7"/></svg></span>
+                        <span class="card-label" style="background: var(--color-brand); color: #fff;">Розвиток</span>
+                        <span class="card-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 12C12 7.5 8.5 5 4 5c0 4.5 3.5 7 8 7z"/><path d="M12 16c0-3.6 3-6 7-6 0 3.6-3 6-7 6z"/></svg></span>
                     </div>
-                    <div class="service-wrapper">
-                        <h3 class="service-title">Технічний аудит і оптимізація структури годівлі</h3>
-                        <p class="service-text">Ми пропонуємо не просто окремі продукти, а повний комплекс аналітики. Наші фахівці аналізують діючі раціони, рахують економіку введення кожного компонента та коригують рецептури для досягнення максимальних економічних показників вашого підприємства.</p>
+                    <div>
+                        <h3>Асортимент розширюється</h3>
+                        <p>Лінійка компонентів формується. Серед напрямів, які плануємо додати, — премікси та фітобіотики.</p>
                     </div>
                 </div>
 
@@ -865,24 +740,24 @@
 
         <section id="advantages">
             <div class="section-header">
-                <h2>Стандарти роботи AGRAVIKA</h2>
+                <h2>Як ми працюємо</h2>
             </div>
             <div class="metrics-grid">
                 <div class="metric-item">
                     <div class="metric">Сертифікація</div>
-                    <span>Компоненти від виробників із сертифікацією GMP+ / FAMI-QS</span>
+                    <span>Орієнтуємось на компоненти від виробників із сертифікацією GMP+ / FAMI-QS</span>
                 </div>
                 <div class="metric-item">
-                    <div class="metric">Експертиза</div>
-                    <span>Практичні знання технології годівлі та розрахунок раціонів</span>
+                    <div class="metric">Підбір</div>
+                    <span>Допомагаємо підібрати добавку під конкретну задачу в раціоні</span>
                 </div>
                 <div class="metric-item">
-                    <div class="metric">Контроль</div>
-                    <span>Повний супровід від аналізу рецептури до впровадження</span>
+                    <div class="metric">Документи</div>
+                    <span>Постачання супроводжується документами на партію</span>
                 </div>
                 <div class="metric-item">
-                    <div class="metric">Окупність</div>
-                    <span>Оптимізація FCR та пряме зниження собівартості корму</span>
+                    <div class="metric">Прямий контакт</div>
+                    <span>Питання щодо продукції вирішуються без посередників</span>
                 </div>
             </div>
         </section>
@@ -893,130 +768,60 @@
             </div>
             <div class="faq-list">
                 <details class="faq-item">
-                    <summary>Яку продукцію постачає АГРАВІКА?</summary>
-                    <p>Органічні кислоти та підкислювачі, фітобіотики, кормові добавки, функціональні інгредієнти та премікси для птахівництва, свинарства й великої рогатої худоби. Підбір відбувається під конкретну рецептуру та фазу годівлі.</p>
+                    <summary>Які кормові добавки постачає АГРАВІКА?</summary>
+                    <p>Основні напрями — адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі та кормова сечовина. Асортимент розширюється, тому актуальний перелік краще уточнити за телефоном.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Чи можна отримати розрахунок економічного ефекту перед закупівлею?</summary>
-                    <p>Так. Ми аналізуємо вашу діючу рецептуру, показники продуктивності та вартість раціону, після чого надаємо розрахунок очікуваного ефекту від введення компонента. Для початку достатньо надіслати рецептуру через форму на сайті або на пошту info@agravika.com.ua.</p>
+                    <summary>Хто стоїть за компанією?</summary>
+                    <p>Сайт належить ТОВ «АГРАВІКА». Компанія зареєстрована у Львові, усі договірні зобов'язання та поставки супроводжуються юридичною особою.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Які документи надаються разом із продукцією?</summary>
-                    <p>Повний пакет супровідних документів на партію: сертифікати відповідності та якості виробника, декларації, документи щодо реєстрації кормових добавок в Україні. Усі договірні зобов'язання та поставки супроводжуються ТОВ «АГРАВІКА».</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Чи є доставка в регіони?</summary>
-                    <p>Так, ми працюємо з підприємствами по всій Україні. Умови та строки доставки узгоджуються індивідуально залежно від обсягу партії та регіону.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Як швидко можна отримати комерційну пропозицію?</summary>
-                    <p>Залиште заявку у формі нижче або зателефонуйте за номером +38 (067) 673-43-53 — ми зв'яжемося з вами протягом робочого дня та уточнимо технічне завдання.</p>
+                    <summary>Як зв'язатися щодо продукції?</summary>
+                    <p>Зателефонуйте за номером +38 (067) 673-43-53 або напишіть на info@agravika.com.ua — опишіть, яка добавка вас цікавить і для якого поголів'я.</p>
                 </details>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
-            <div class="contact-grid">
-
-                <div class="info-pane">
-                    <div>
-                        <h2>Контакти</h2>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-                                <div>
-                                    <div class="text-caption">Телефон головного офісу</div>
-                                    <a href="tel:+380676734353">+38 (067) 673-43-53</a>
-                                    <div class="messengers">
-                                        <a class="messenger-btn" href="viber://chat?number=%2B380676734353">Viber</a>
-                                        <!-- TODO: замінити на реальний username компанії в Telegram, напр. https://t.me/agravika -->
-                                        <a class="messenger-btn" href="https://t.me/+380676734353" rel="noopener">Telegram</a>
-                                    </div>
-                                </div>
+            <div class="info-pane">
+                <div>
+                    <h2>Контакти</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                            <div>
+                                <div class="text-caption">Телефон</div>
+                                <a href="tel:+380676734353">+38 (067) 673-43-53</a>
                             </div>
+                        </div>
 
-                            <div class="info-item">
-                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
-                                <div>
-                                    <div class="text-caption">Електронна пошта</div>
-                                    <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
-                                </div>
+                        <div class="info-item">
+                            <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+                            <div>
+                                <div class="text-caption">Електронна пошта</div>
+                                <a href="mailto:info@agravika.com.ua">info@agravika.com.ua</a>
                             </div>
+                        </div>
 
-                            <div class="info-item">
-                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                                <div>
-                                    <div class="text-caption">Юридична адреса</div>
-                                    <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                                <div>
-                                    <div class="text-caption">Графік роботи</div>
-                                    <!-- TODO: підставити реальний графік роботи компанії -->
-                                    <p>Пн–Пт, 09:00–18:00</p>
-                                </div>
+                        <div class="info-item">
+                            <span class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                            <div>
+                                <div class="text-caption">Юридична адреса</div>
+                                <p>Україна, 79037, Львівська обл., м. Львів, вул. Земельна, буд. 1</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="corporate-tag">
-                        <strong>Офіційний суб'єкт:</strong> усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
-                    </div>
                 </div>
 
-                <div class="form-pane">
-                    <h2>Залишити заявку</h2>
-                    <p>Опишіть завдання — ми підготуємо прорахунок і комерційну пропозицію протягом робочого дня.</p>
-
-                    <!--
-                        TODO: форма налаштована під безкоштовний сервіс Web3Forms (працює на статичному GitHub Pages).
-                        1) Зареєструйтеся на https://web3forms.com і отримайте access key на пошту info@agravika.com.ua
-                        2) Вставте його у value поля access_key нижче.
-                        Альтернативи: Formspree, Getform, Google Forms.
-                    -->
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="ВСТАВТЕ-ВАШ-ACCESS-KEY">
-                        <input type="hidden" name="subject" value="Нова заявка з сайту agravika.com.ua">
-                        <input type="hidden" name="from_name" value="Сайт AGRAVIKA">
-                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-                        <div class="field">
-                            <label for="name">Ім'я та компанія</label>
-                            <input id="name" name="name" type="text" required autocomplete="organization" placeholder="Іван Мельник, ТОВ «Агрофірма»">
-                        </div>
-                        <div class="field">
-                            <label for="phone">Телефон</label>
-                            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __">
-                        </div>
-                        <div class="field">
-                            <label for="direction">Напрям</label>
-                            <select id="direction" name="direction">
-                                <option>Птахівництво</option>
-                                <option>Свинарство</option>
-                                <option>ВРХ</option>
-                                <option>Комбікормове виробництво</option>
-                                <option>Інше</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="message">Завдання</label>
-                            <textarea id="message" name="message" placeholder="Наприклад: потрібен підкислювач для бройлера, поголів'я 200 тис."></textarea>
-                        </div>
-
-                        <button class="btn-primary full" type="submit">Надіслати заявку</button>
-                        <p class="form-consent">Надсилаючи форму, ви погоджуєтесь на обробку наданих контактних даних для зворотного зв'язку.</p>
-                    </form>
+                <div class="corporate-tag">
+                    <strong>Офіційний суб'єкт:</strong> усі договірні зобов'язання, поставки та сертифікація супроводжуються ТОВ «АГРАВІКА».
                 </div>
-
             </div>
         </section>
 
         <footer>
             <div>© 2026 ТОВ «АГРАВІКА». Всі права захищено.</div>
-            <!-- TODO: додати код ЄДРПОУ — це помітно підвищує довіру B2B-клієнтів -->
+            <!-- TODO: додати код ЄДРПОУ — сильний сигнал довіри для B2B -->
             <div>Офіційний цифровий домен: <strong>agravika.com.ua</strong></div>
         </footer>
 
@@ -1056,7 +861,7 @@
           "url": "https://agravika.com.ua/",
           "logo": "https://agravika.com.ua/favicon.svg",
           "image": "https://agravika.com.ua/og-image.jpg",
-          "description": "Постачальник кормових добавок, преміксів, органічних кислот та фітобіотиків для промислового тваринництва.",
+          "description": "Постачання кормових добавок для годівлі сільськогосподарських тварин: адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі, кормова сечовина.",
           "email": "info@agravika.com.ua",
           "telephone": "+380676734353",
           "address": {
@@ -1090,28 +895,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Яку продукцію постачає АГРАВІКА?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Органічні кислоти та підкислювачі, фітобіотики, кормові добавки, функціональні інгредієнти та премікси для птахівництва, свинарства й великої рогатої худоби. Підбір відбувається під конкретну рецептуру та фазу годівлі." }
+              "name": "Які кормові добавки постачає АГРАВІКА?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Основні напрями — адсорбенти мікотоксинів, підкислювачі, вітаміни, кормові дріжджі та кормова сечовина. Асортимент розширюється, актуальний перелік уточнюється за телефоном." }
             },
             {
               "@type": "Question",
-              "name": "Чи можна отримати розрахунок економічного ефекту перед закупівлею?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Так. Ми аналізуємо діючу рецептуру, показники продуктивності та вартість раціону, після чого надаємо розрахунок очікуваного ефекту від введення компонента." }
+              "name": "Хто стоїть за компанією?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Сайт належить ТОВ «АГРАВІКА». Компанія зареєстрована у Львові, усі договірні зобов'язання та поставки супроводжуються юридичною особою." }
             },
             {
               "@type": "Question",
-              "name": "Які документи надаються разом із продукцією?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Повний пакет супровідних документів на партію: сертифікати відповідності та якості виробника, декларації, документи щодо реєстрації кормових добавок в Україні." }
-            },
-            {
-              "@type": "Question",
-              "name": "Чи є доставка в регіони?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Так, ми працюємо з підприємствами по всій Україні. Умови та строки доставки узгоджуються індивідуально залежно від обсягу партії та регіону." }
-            },
-            {
-              "@type": "Question",
-              "name": "Як швидко можна отримати комерційну пропозицію?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Залиште заявку у формі на сайті або зателефонуйте за номером +38 (067) 673-43-53 — ми зв'яжемося протягом робочого дня." }
+              "name": "Як зв'язатися щодо продукції?",
+              "acceptedAnswer": { "@type": "Answer", "text": "За телефоном +38 (067) 673-43-53 або на пошту info@agravika.com.ua." }
             }
           ]
         }
